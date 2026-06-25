@@ -1,6 +1,12 @@
 {
   "version": 1,
   "skills": {
+    "project-factory": {
+      "source": "koldovsky/project-factory",
+      "sourceType": "github",
+      "skillPath": "skills/project-factory/SKILL.md",
+      "computedHash": "cd2a2b22bdaf935d2feb6e2f0c679d1c2a3acd680f2b291867414212f3a60f38"
+    },
     "vercel-react-best-practices": {
       "source": "vercel-labs/agent-skills",
       "sourceType": "github",
