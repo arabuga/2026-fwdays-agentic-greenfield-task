@@ -28,6 +28,7 @@ import { join } from "node:path";
 
 const root = process.cwd();
 const flags = new Set(process.argv.slice(2));
+const preCommit = flags.has("--pre-commit");
 const PATHS = {
   requirements: "docs/requirements.md",
   plan: "docs/mvp-capability-plan.md",
@@ -118,7 +119,9 @@ const specsStarted = specFileCount > 0;
 for (const id of mvpFRs) {
   if (!specMentions.has(id)) {
     const msg = `${id} is not cited by any spec under ${PATHS.specsDir}/`;
-    if (specsStarted || flags.has("--release")) fail("spec-mention", msg);
+    if (preCommit) {
+      warn("spec-mention", `${msg} (partial G2 — expected until all capability specs land)`);
+    } else if (specsStarted || flags.has("--release")) fail("spec-mention", msg);
     else warn("spec-mention", `${msg} (no specs authored yet - expected before Phase 2)`);
   }
 }

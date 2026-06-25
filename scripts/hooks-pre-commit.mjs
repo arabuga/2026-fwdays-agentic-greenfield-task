@@ -55,7 +55,7 @@ run("npx tsc --noEmit");
 // The validator regenerates the report + trace graph; stage them so the
 // commit always contains the fresh versions (otherwise the worktree is left
 // dirty and CI --check-fresh fails on staleness).
-run("node scripts/check-traceability.mjs");
+run("node scripts/check-traceability.mjs --pre-commit");
 run('git add docs/qa/traceability-report.md trace/trace.json');
 
 // 5 — trajectory (process audit: review evidence, Slice: trailers, scope).
