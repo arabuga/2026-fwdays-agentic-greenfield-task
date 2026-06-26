@@ -10,7 +10,7 @@ Result: PASS
 
 | Slice | Review evidence | Trailer commits | design+tasks | lib domains touched |
 |---|---|---|---|---|
-| 2026-06-26-add-comfort-score | clean | 1 | yes | scoring |
+| 2026-06-26-add-comfort-score | clean | 2 | yes | scoring |
 
 ## Cross-slice module overlap
 

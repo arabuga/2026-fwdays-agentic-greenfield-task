@@ -4,7 +4,7 @@
     {
       "slice": "2026-06-26-add-comfort-score",
       "reviewEvidence": "clean",
-      "trailerCommits": 1,
+      "trailerCommits": 2,
       "libDomains": [
         "scoring"
       ],
