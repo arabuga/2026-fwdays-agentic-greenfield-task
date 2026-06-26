@@ -3,7 +3,6 @@ import {
   comfortBadgeTier,
   comfortScore,
   ComfortValidationError,
-  rationaleHasEmoji,
   weekendComfortHighlight,
   type DailyComfortInput,
 } from "./comfort";
@@ -31,6 +30,9 @@ const highUvMild: DailyComfortInput = {
   cloudCoverPercent: 20,
   uvIndex: 9,
 };
+
+const EMOJI_PATTERN =
+  /[\u{1F300}-\u{1FAFF}\u{2600}-\u{27BF}\u{FE00}-\u{FE0F}\u{200D}]/u;
 
 describe("comfortScore", () => {
   // @trace FR-COMFORT-01
@@ -76,7 +78,7 @@ describe("comfortScore", () => {
     const samples = [warmDry, rainyCold, highUvMild].map(comfortScore);
     for (const { rationale } of samples) {
       expect(rationale.length).toBeLessThanOrEqual(80);
-      expect(rationaleHasEmoji(rationale)).toBe(false);
+      expect(EMOJI_PATTERN.test(rationale)).toBe(false);
       expect(rationale).toMatch(/[а-яіїєґ]/i);
     }
   });

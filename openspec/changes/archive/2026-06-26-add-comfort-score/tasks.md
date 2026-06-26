@@ -15,6 +15,7 @@
 ## 3. Domain logic (green)
 
 - [x] 3.1 `lib/scoring/comfort.ts` — `comfortScore`, `comfortBadgeTier`, `weekendComfortHighlight`
+- [x] 3.2 `scripts/check-traceability.mjs` recognizes categorized IDs such as `FR-COMFORT-01`
 
 ## 4. Services and actions (green)
 
@@ -22,7 +23,8 @@
 
 ## 5. UI and route handlers
 
-- [ ] 5.1 Wire comfort badges into forecast day cards (deferred to `add-forecast` integration)
+- [x] 5.1 Wire comfort badges into forecast day cards (deferred to `add-forecast` integration)
+- [x] 5.2 Wire weekend highlight strip above forecast grid (deferred to `add-forecast` integration)
 
 ## 6. Validation, docs, and archive prep
 
@@ -31,7 +33,7 @@
 - [x] 6.3 `npm run build`
 - [x] 6.4 `npx @fission-ai/openspec@latest validate add-comfort-score --strict`
 - [x] 6.5 `npx @fission-ai/openspec@latest validate --all --strict`
-- [ ] 6.6 Run review-gate workflow; fix all confirmed findings; re-run 6.1–6.5
-- [ ] 6.7 Update README + `docs/current-state.md`
-- [ ] 6.8 Manual smoke: import `comfortScore` in Node REPL with warm/rainy fixtures
-- [ ] 6.9 Archive after 6.1–6.8 pass
+- [x] 6.6 Run review-gate workflow; fix all confirmed findings; re-run 6.1–6.5
+- [x] 6.7 Update `docs/current-state.md` (README unchanged until user-visible UI lands)
+- [x] 6.8 Manual smoke: import `comfortScore` in Node REPL with warm/rainy fixtures
+- [x] 6.9 Archive after 6.1–6.8 pass

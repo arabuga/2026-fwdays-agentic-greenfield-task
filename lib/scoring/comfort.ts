@@ -28,9 +28,6 @@ const RATIONALE_MAX_LENGTH = 80;
 
 const PLEASANT_WORDS = /приємн/i;
 
-const EMOJI_PATTERN =
-  /[\u{1F300}-\u{1FAFF}\u{2600}-\u{27BF}\u{FE00}-\u{FE0F}\u{200D}]/u;
-
 export class ComfortValidationError extends Error {
   constructor(message: string) {
     super(message);
@@ -161,6 +158,3 @@ function clamp(value: number, min: number, max: number): number {
   return Math.min(max, Math.max(min, value));
 }
 
-export function rationaleHasEmoji(text: string): boolean {
-  return EMOJI_PATTERN.test(text);
-}

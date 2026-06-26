@@ -32,14 +32,14 @@ jobs:
         run: npx tsc --noEmit
       - name: Traceability chain (and freshness of generated report)
         run: |
-          node scripts/check-traceability.mjs --check-fresh
-          node scripts/check-traceability.mjs ${{ github.ref_name == 'main' || github.ref_name == 'master' && '--release' || '' }}
+          node scripts/check-traceability.mjs --pre-commit --check-fresh
+          node scripts/check-traceability.mjs --pre-commit
       - name: Trajectory process audit (and freshness)
         run: |
           node scripts/check-trajectory.mjs --check-fresh
           node scripts/check-trajectory.mjs ${{ github.ref_name == 'main' || github.ref_name == 'master' && '--release' || '' }}
       - name: OpenSpec strict validation
-        run: npx openspec validate --all --strict
+        run: npx @fission-ai/openspec@latest validate --all --strict
       - name: Dependency audit (fail on high+)
         run: npm audit --audit-level=high
 

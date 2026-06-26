@@ -46,7 +46,8 @@ speed (km/h), cloud cover (0–100 %), and UV index (`FR-COMFORT-02`).
   80 %)
 - **WHEN** `comfortScore` is called for each
 - **THEN** the higher-precipitation day receives a strictly lower `value`
-- **AND** both rationales reference the worsened condition in Ukrainian
+- **AND** the higher-precipitation day's rationale references the worsened
+  condition in Ukrainian
 
 #### Scenario: Extreme wind lowers comfort
 
@@ -85,11 +86,12 @@ weather data (`FR-COMFORT-03`).
 - **THEN** `rationale` mentions sun or UV exposure
 - **AND** `rationale` does not claim ideal shade or cool conditions
 
-### Requirement: Comfort badge color tiers
+### Requirement: Comfort badge tier helper
 
-The system SHALL map each daily comfort `value` to a badge tier for day-card
-display: **green** when `value ≥ 70`, **yellow** when `40 ≤ value ≤ 69`, and
-**red** when `value < 40` (`FR-COMFORT-04`, `DESIGN.md` Sky Calm tokens).
+The system SHALL map each daily comfort `value` to badge tier data for forecast
+day-card display: **green** when `value ≥ 70`, **yellow** when `40 ≤ value ≤ 69`,
+and **red** when `value < 40`. The forecast UI slice SHALL render that tier in
+the day card (`FR-COMFORT-04`, `DESIGN.md` Sky Calm tokens).
 
 #### Scenario: Green tier for comfortable days
 
@@ -115,12 +117,12 @@ display: **green** when `value ≥ 70`, **yellow** when `40 ≤ value ≤ 69`, a
 - **WHEN** the badge tier helper is applied to each
 - **THEN** tiers are `green`, `yellow`, `yellow`, and `red` respectively
 
-### Requirement: Upcoming weekend comfort highlight
+### Requirement: Upcoming weekend comfort highlight data
 
-The system SHALL compute and highlight the upcoming weekend comfort score as the
+The system SHALL compute upcoming weekend comfort highlight data as the
 arithmetic mean (rounded to nearest integer) of Saturday and Sunday daily scores
-for the active location's local calendar dates, and display that highlight above
-the seven-day forecast grid (`FR-COMFORT-05`).
+for the active location's local calendar dates. The forecast UI slice SHALL
+display that highlight above the seven-day forecast grid (`FR-COMFORT-05`).
 
 #### Scenario: Weekend average from Saturday and Sunday
 
@@ -134,7 +136,7 @@ the seven-day forecast grid (`FR-COMFORT-05`).
 - **GIVEN** a forecast window that does not include the next Saturday and Sunday
   in the location timezone
 - **WHEN** the weekend highlight is requested
-- **THEN** no weekend highlight strip is rendered
+- **THEN** no weekend highlight value is returned for the UI to render
 - **AND** individual day scores still display normally
 
 #### Scenario: Weekend highlight uses the same scoring function

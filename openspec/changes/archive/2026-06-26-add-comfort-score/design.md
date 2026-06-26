@@ -8,10 +8,12 @@
 - Deterministic 0–100 score from five Open-Meteo daily fields
 - Ukrainian rationale ≤ 80 chars, no emoji, no weather contradictions
 - Badge tier mapping and weekend Sat+Sun average helper
+- Traceability parser support for categorized FR IDs in test/eval annotations
 
 **Non-goals**
 
-- Day-card UI, tooltip markup, compare table (`FR-COMPARE-02`)
+- Day-card UI, tooltip markup, forecast-grid weekend strip, compare table
+  (`FR-COMFORT-04`, `FR-COMFORT-05`, `FR-COMPARE-02`)
 - Persisting scores server-side
 - Publishing scoring weight ADR (tuning is internal; outcomes are spec-bound)
 
@@ -22,6 +24,7 @@
 | Deduction-based formula from ideal 22 °C | ML / lookup table | Transparent, testable; weights are implementation detail |
 | Template rationales by dominant factor | LLM-generated text | Deterministic, no API cost; less variety |
 | `weekendComfortHighlight(days)` scans forecast rows | UI-only averaging | Keeps logic in `lib/` for unit tests |
+| UI rendering deferred to `add-forecast` | Build demo UI in this slice | Preserves dependency order; this slice proves domain behavior first |
 
 ## Data model
 

@@ -1,4 +1,4 @@
-# Comfort Score — Implementation Delta
+# Comfort Score — Domain Implementation Delta
 
 ## ADDED Requirements
 
@@ -37,7 +37,8 @@ speed (km/h), cloud cover (0–100 %), and UV index (`FR-COMFORT-02`).
   80 %)
 - **WHEN** `comfortScore` is called for each
 - **THEN** the higher-precipitation day receives a strictly lower `value`
-- **AND** both rationales reference the worsened condition in Ukrainian
+- **AND** the higher-precipitation day's rationale references the worsened
+  condition in Ukrainian
 
 #### Scenario: Extreme wind lowers comfort
 
@@ -76,11 +77,13 @@ weather data (`FR-COMFORT-03`).
 - **THEN** `rationale` mentions sun or UV exposure
 - **AND** `rationale` does not claim ideal shade or cool conditions
 
-### Requirement: Comfort badge color tiers
+### Requirement: Comfort badge tier helper
 
-The system SHALL map each daily comfort `value` to a badge tier for day-card
-display: **green** when `value ≥ 70`, **yellow** when `40 ≤ value ≤ 69`, and
-**red** when `value < 40` (`FR-COMFORT-04`, `DESIGN.md` Sky Calm tokens).
+The system SHALL expose a framework-free helper that maps each daily comfort
+`value` to badge tier data: **green** when `value ≥ 70`, **yellow** when
+`40 ≤ value ≤ 69`, and **red** when `value < 40`. Rendering that tier in
+forecast day cards remains deferred to the `add-forecast` UI integration slice
+(`FR-COMFORT-04`, `DESIGN.md` Sky Calm tokens).
 
 #### Scenario: Green tier for comfortable days
 
@@ -106,27 +109,26 @@ display: **green** when `value ≥ 70`, **yellow** when `40 ≤ value ≤ 69`, a
 - **WHEN** the badge tier helper is applied to each
 - **THEN** tiers are `green`, `yellow`, `yellow`, and `red` respectively
 
-### Requirement: Upcoming weekend comfort highlight
+### Requirement: Upcoming weekend comfort value helper
 
-The system SHALL compute and highlight the upcoming weekend comfort score as the
-arithmetic mean (rounded to nearest integer) of Saturday and Sunday daily scores
-for the active location's local calendar dates, and display that highlight above
-the seven-day forecast grid (`FR-COMFORT-05`).
+The system SHALL expose a framework-free helper that computes the upcoming
+weekend comfort score as the arithmetic mean (rounded to nearest integer) of
+Saturday and Sunday daily scores for the active location's local calendar dates.
+Rendering that value above the forecast grid remains deferred to the
+`add-forecast` UI integration slice (`FR-COMFORT-05`).
 
 #### Scenario: Weekend average from Saturday and Sunday
 
 - **GIVEN** a seven-day forecast where Saturday scores 80 and Sunday scores 60
 - **WHEN** the weekend highlight is computed for that grid
 - **THEN** the highlighted weekend score is 70
-- **AND** the highlight appears above the day-card grid, not inside a single card
 
 #### Scenario: Partial week without upcoming weekend
 
 - **GIVEN** a forecast window that does not include the next Saturday and Sunday
   in the location timezone
 - **WHEN** the weekend highlight is requested
-- **THEN** no weekend highlight strip is rendered
-- **AND** individual day scores still display normally
+- **THEN** no weekend highlight value is returned
 
 #### Scenario: Weekend highlight uses the same scoring function
 
@@ -134,3 +136,16 @@ the seven-day forecast grid (`FR-COMFORT-05`).
 - **WHEN** the weekend highlight is computed
 - **THEN** each day's score equals `comfortScore(thatDay).value`
 - **AND** the highlight value equals the rounded average of those two scores
+
+### Requirement: Categorized FR trace annotations
+
+The traceability checker SHALL recognize `@trace` annotations that use
+categorized requirement IDs such as `FR-COMFORT-01`, including comma-separated
+lists of those IDs.
+
+#### Scenario: Categorized trace comments are collected
+
+- **GIVEN** a test or eval file containing `// @trace FR-COMFORT-01`
+- **WHEN** `scripts/check-traceability.mjs --pre-commit` parses the file
+- **THEN** the generated trace report counts that file as evidence for
+  `FR-COMFORT-01`
