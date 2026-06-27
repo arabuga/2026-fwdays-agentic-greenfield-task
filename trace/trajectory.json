@@ -49,6 +49,16 @@
         "shell"
       ],
       "processComplete": true
+    },
+    {
+      "slice": "2026-06-27-add-weekend-compare",
+      "reviewEvidence": "clean",
+      "trailerCommits": 1,
+      "libDomains": [
+        "i18n",
+        "weekend-compare"
+      ],
+      "processComplete": true
     }
   ],
   "overlaps": [
@@ -58,7 +68,8 @@
         "2026-06-27-add-city-search",
         "2026-06-27-add-forecast",
         "2026-06-27-add-map",
-        "2026-06-27-add-shell"
+        "2026-06-27-add-shell",
+        "2026-06-27-add-weekend-compare"
       ]
     }
   ],
@@ -66,7 +77,7 @@
   "warnings": [
     {
       "check": "in-scope",
-      "msg": "lib/i18n/ modified by 4 slices (2026-06-27-add-city-search, 2026-06-27-add-forecast, 2026-06-27-add-map, 2026-06-27-add-shell) — review for scope drift"
+      "msg": "lib/i18n/ modified by 5 slices (2026-06-27-add-city-search, 2026-06-27-add-forecast, 2026-06-27-add-map, 2026-06-27-add-shell, 2026-06-27-add-weekend-compare) — review for scope drift"
     }
   ]
 }

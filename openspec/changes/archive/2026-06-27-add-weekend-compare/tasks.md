@@ -36,4 +36,4 @@
 - [x] 6.7 Update `docs/current-state.md`
 - [x] 6.8 Run review-gate workflow; fix confirmed findings; re-run 6.1–6.6
 - [x] 6.9 Manual browser smoke: pin cities, toggle compare, make active.
-- [ ] 6.10 Archive after 6.1–6.9 pass
+- [x] 6.10 Archive after 6.1–6.9 pass
