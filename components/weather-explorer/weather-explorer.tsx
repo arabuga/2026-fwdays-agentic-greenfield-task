@@ -4,11 +4,37 @@ import { useState } from "react";
 import { CitySearch } from "@/components/city-search/city-search";
 import { ForecastPanel } from "@/components/forecast/forecast-panel";
 import { MapPanel } from "@/components/map/map-panel";
+import { PinnedCitiesBar } from "@/components/weekend-compare/pinned-cities-bar";
+import { WeekendComparePanel } from "@/components/weekend-compare/weekend-compare-panel";
 import type { CityLocation } from "@/lib/city-search/geocoding";
+import { selectedLocationToSearchParams } from "@/lib/city-search/geocoding";
+import { uk } from "@/lib/i18n/uk";
 import { shellContent } from "@/lib/shell/shell-content";
+import {
+  addPinnedCity,
+  removePinnedCity,
+} from "@/lib/weekend-compare/pins";
 
 export function WeatherExplorer() {
   const [selectedLocation, setSelectedLocation] = useState<CityLocation | null>(null);
+  const [pinnedCities, setPinnedCities] = useState<CityLocation[]>([]);
+  const [compareMode, setCompareMode] = useState(false);
+
+  function handleSelectLocation(location: CityLocation) {
+    setSelectedLocation(location);
+
+    const nextUrl = new URL(window.location.href);
+    nextUrl.search = selectedLocationToSearchParams(location).toString();
+    window.history.replaceState(null, "", nextUrl);
+  }
+
+  function handlePin(location: CityLocation) {
+    setPinnedCities((current) => addPinnedCity(current, location));
+  }
+
+  function handleUnpin(location: CityLocation) {
+    setPinnedCities((current) => removePinnedCity(current, location));
+  }
 
   return (
     <main className="mx-auto grid w-full max-w-7xl gap-6 px-5 pb-10 pt-4 sm:px-8 md:grid-cols-2 xl:grid-cols-[minmax(18rem,0.9fr)_minmax(0,1.35fr)_minmax(18rem,1fr)]">
@@ -36,7 +62,7 @@ export function WeatherExplorer() {
                 : "empty"
             }
             selectedLocation={selectedLocation}
-            onSelectLocation={setSelectedLocation}
+            onSelectLocation={handleSelectLocation}
           />
 
           <p className="text-sm text-[#5c6b7a] dark:text-[#8b9bb0]">
@@ -54,9 +80,44 @@ export function WeatherExplorer() {
         </div>
       </section>
 
-      <ForecastPanel key={selectedLocation?.id ?? "empty"} location={selectedLocation} />
+      <div className="flex flex-col gap-4 md:col-span-1 xl:col-span-1">
+        <PinnedCitiesBar
+          pinnedCities={pinnedCities}
+          activeLocation={selectedLocation}
+          onPin={handlePin}
+          onUnpin={handleUnpin}
+        />
 
-      <MapPanel location={selectedLocation} onSelectLocation={setSelectedLocation} />
+        <label className="flex items-start gap-3 rounded-[1.5rem] border border-white/70 bg-white/70 p-4 shadow-[0_18px_60px_rgba(26,35,50,0.08)] backdrop-blur dark:border-white/10 dark:bg-[#1a2332]/80">
+          <input
+            type="checkbox"
+            className="mt-1 h-4 w-4 accent-[#3b6fd9]"
+            checked={compareMode}
+            disabled={pinnedCities.length === 0}
+            onChange={(event) => setCompareMode(event.target.checked)}
+          />
+          <span>
+            <span className="block text-sm font-medium text-[#1a2332] dark:text-[#e8edf4]">
+              {uk.compare.toggleLabel}
+            </span>
+            <span className="mt-1 block text-sm leading-6 text-[#5c6b7a] dark:text-[#8b9bb0]">
+              {uk.compare.toggleHint}
+            </span>
+          </span>
+        </label>
+
+        {compareMode ? (
+          <WeekendComparePanel
+            pinnedCities={pinnedCities}
+            activeLocation={selectedLocation}
+            onMakeActive={handleSelectLocation}
+          />
+        ) : (
+          <ForecastPanel key={selectedLocation?.id ?? "empty"} location={selectedLocation} />
+        )}
+      </div>
+
+      <MapPanel location={selectedLocation} onSelectLocation={handleSelectLocation} />
     </main>
   );
 }
