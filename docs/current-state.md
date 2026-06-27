@@ -17,35 +17,32 @@ Completed:
 - G4 archived: `add-shell`.
 - G4 archived: `add-city-search`.
 - G4 archived: `add-forecast`.
+- G4 archived: `add-map`.
 
 ## Current Slice
 
-Active slice: `add-map`
+Active slice: `add-weekend-compare`
 
-Last completed slice: `add-forecast`
+Last completed slice: `add-map`
 
 Status:
 
-- Map pure helpers, reverse geocode client, Leaflet panel, and WeatherExplorer
-  wiring are implemented under `lib/map/` and `components/map/`.
-- Baseline spec authored at `openspec/specs/map/spec.md`.
-- OpenSpec change `add-map` is active with tests, lint, and build green.
-- Review-gate, manual smoke, and archive remain pending for `add-map`.
+- Leaflet OSM map, marker popup, click-to-set via Nominatim reverse geocode, and
+  Tailwind/Leaflet layout fixes are shipped under `components/map/` and `lib/map/`.
+- Review-gate completed for `add-map`; archived at
+  `openspec/changes/archive/2026-06-27-add-map`.
+- Manual browser smoke passed on 2026-06-27.
+- Commit `e1f856e` carries `Slice: add-map`.
 
 ## Validation Snapshot
 
-Last green (`add-map` implementation, 2026-06-27):
+Last green (`add-map` archive, 2026-06-27):
 
 - `npm run test:run` (30 tests)
 - `npm run lint`
 - `npm run build`
-- `npx @fission-ai/openspec@latest validate add-map --strict` (pending re-run after delta fix)
+- `npx @fission-ai/openspec@latest validate --all --strict`
 - `node scripts/check-traceability.mjs --pre-commit`
-
-Archived `add-forecast` green:
-
-- Full validation + manual smoke on 2026-06-27
-- Commit `021256a` with `Slice: add-forecast`
 
 Expected warnings:
 
@@ -55,14 +52,12 @@ Expected warnings:
 
 ## Known Deferrals
 
-- `add-map` not archived yet; review-gate and smoke pending.
-- Live clock, footer jokes, animated background, and weekend compare remain
-  deferred.
+- `add-weekend-compare` not started yet (next on critical path).
+- Live clock, footer jokes, and animated background remain deferred polish slices.
 
 ## Next Actions
 
-1. Manual smoke for `add-map` (select city → map centers → click updates location
-   and forecast).
-2. Review-gate, then archive `add-map`.
-3. Continue polish slices: `add-top-clock`, `add-animated-bg`, `add-bottom-jokes`,
-   then `add-weekend-compare`.
+1. OpenSpec propose + implement `add-weekend-compare` (pin up to 3 cities,
+   weekend compare toggle, Sat/Sun table with comfort).
+2. Review-gate, smoke, archive `add-weekend-compare`.
+3. Finish polish slices: `add-top-clock`, `add-animated-bg`, `add-bottom-jokes`.
