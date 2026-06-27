@@ -1,4 +1,5 @@
 import Link from "next/link";
+import { CitySearch } from "@/components/city-search/city-search";
 import { shellContent } from "@/lib/shell/shell-content";
 
 const placeholderCards = [
@@ -53,32 +54,7 @@ export default function Home() {
               </p>
             </div>
 
-            <div
-              role="search"
-              className="w-full max-w-xl rounded-3xl border border-[#d8e3f0] bg-[#f4f7fb] p-3 text-left shadow-inner dark:border-white/10 dark:bg-[#0f1419]"
-              aria-label={shellContent.searchLabel}
-            >
-              <label
-                className="mb-2 block px-2 text-sm font-medium text-[#1a2332] dark:text-[#e8edf4]"
-                htmlFor="city-search-placeholder"
-              >
-                {shellContent.searchLabel}
-              </label>
-              <input
-                id="city-search-placeholder"
-                type="search"
-                readOnly
-                placeholder={shellContent.searchPlaceholder}
-                aria-describedby="city-search-hint"
-                className="h-12 w-full rounded-2xl border border-transparent bg-white px-4 text-base text-[#1a2332] outline-none ring-[#3b6fd9] transition placeholder:text-[#5c6b7a]/70 focus:border-[#3b6fd9] focus:ring-2 dark:bg-[#1a2332] dark:text-[#e8edf4] dark:placeholder:text-[#8b9bb0]"
-              />
-              <p
-                id="city-search-hint"
-                className="mt-3 px-2 text-sm leading-6 text-[#5c6b7a] dark:text-[#8b9bb0]"
-              >
-                {shellContent.searchHint}
-              </p>
-            </div>
+            <CitySearch />
 
             <p className="text-sm text-[#5c6b7a] dark:text-[#8b9bb0]">
               {shellContent.geolocationPolicy}

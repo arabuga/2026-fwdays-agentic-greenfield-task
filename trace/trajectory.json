@@ -11,10 +11,20 @@
       "processComplete": true
     },
     {
-      "slice": "2026-06-27-add-shell",
+      "slice": "2026-06-27-add-city-search",
       "reviewEvidence": "clean",
       "trailerCommits": 0,
       "libDomains": [],
+      "processComplete": true
+    },
+    {
+      "slice": "2026-06-27-add-shell",
+      "reviewEvidence": "clean",
+      "trailerCommits": 1,
+      "libDomains": [
+        "i18n",
+        "shell"
+      ],
       "processComplete": true
     }
   ],
@@ -23,7 +33,7 @@
   "warnings": [
     {
       "check": "trailer",
-      "msg": "2026-06-27-add-shell: no commit carries a \"Slice: add-shell\" trailer"
+      "msg": "2026-06-27-add-city-search: no commit carries a \"Slice: add-city-search\" trailer"
     }
   ]
 }

@@ -19,4 +19,14 @@ export const en = {
     sidePanelText: "Search first, then forecast, map, and weekend comparison.",
     footerText: "Open-Meteo and OpenStreetMap will be connected in upcoming slices.",
   },
+  citySearch: {
+    label: "City search",
+    placeholder: "For example, Lviv or Odesa",
+    hint: "Type at least 2 characters to see suggestions.",
+    loading: "Searching for a city...",
+    emptyResults: "Nothing found",
+    error: "Could not load suggestions. Try again calmly.",
+    selectedPrefix: "Active city",
+    selectedHint: "The forecast for this city lands in the next slice.",
+  },
 } as const;
