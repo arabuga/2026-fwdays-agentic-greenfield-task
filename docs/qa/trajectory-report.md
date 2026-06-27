@@ -12,7 +12,7 @@ Result: PASS, 1 warning(s)
 |---|---|---|---|---|
 | 2026-06-26-add-comfort-score | clean | 2 | yes | scoring |
 | 2026-06-27-add-animated-bg | clean | 2 | yes | animated-bg |
-| 2026-06-27-add-bottom-jokes | clean | 1 | yes | bottom-jokes, i18n |
+| 2026-06-27-add-bottom-jokes | clean | 2 | yes | bottom-jokes, i18n |
 | 2026-06-27-add-city-search | clean | 1 | yes | city-search, i18n |
 | 2026-06-27-add-forecast | clean | 1 | yes | forecast, i18n |
 | 2026-06-27-add-map | clean | 3 | yes | map, i18n |

@@ -68,7 +68,9 @@
       "tests": [
         "lib/shell/shell-content.test.ts"
       ],
-      "recordings": []
+      "recordings": [
+        "docs/qa/demo-recordings/manifest.json"
+      ]
     },
     {
       "id": "FR-SHELL-02",
@@ -79,7 +81,9 @@
       "tests": [
         "lib/shell/shell-content.test.ts"
       ],
-      "recordings": []
+      "recordings": [
+        "docs/qa/demo-recordings/manifest.json"
+      ]
     },
     {
       "id": "FR-SHELL-03",
@@ -90,7 +94,9 @@
       "tests": [
         "lib/shell/shell-content.test.ts"
       ],
-      "recordings": []
+      "recordings": [
+        "docs/qa/demo-recordings/manifest.json"
+      ]
     },
     {
       "id": "FR-CLOCK-01",
@@ -101,7 +107,9 @@
       "tests": [
         "lib/top-clock/format-local-time.test.ts"
       ],
-      "recordings": []
+      "recordings": [
+        "docs/qa/demo-recordings/manifest.json"
+      ]
     },
     {
       "id": "FR-SEARCH-01",
@@ -112,7 +120,9 @@
       "tests": [
         "lib/city-search/geocoding.test.ts"
       ],
-      "recordings": []
+      "recordings": [
+        "docs/qa/demo-recordings/manifest.json"
+      ]
     },
     {
       "id": "FR-SEARCH-02",
@@ -123,7 +133,9 @@
       "tests": [
         "lib/city-search/geocoding.test.ts"
       ],
-      "recordings": []
+      "recordings": [
+        "docs/qa/demo-recordings/manifest.json"
+      ]
     },
     {
       "id": "FR-SEARCH-03",
@@ -134,7 +146,9 @@
       "tests": [
         "lib/city-search/geocoding.test.ts"
       ],
-      "recordings": []
+      "recordings": [
+        "docs/qa/demo-recordings/manifest.json"
+      ]
     },
     {
       "id": "FR-SEARCH-04",
@@ -145,7 +159,9 @@
       "tests": [
         "lib/city-search/geocoding.test.ts"
       ],
-      "recordings": []
+      "recordings": [
+        "docs/qa/demo-recordings/manifest.json"
+      ]
     },
     {
       "id": "FR-SEARCH-05",
@@ -156,7 +172,9 @@
       "tests": [
         "lib/city-search/geocoding.test.ts"
       ],
-      "recordings": []
+      "recordings": [
+        "docs/qa/demo-recordings/manifest.json"
+      ]
     },
     {
       "id": "FR-JOKES-01",
@@ -167,7 +185,9 @@
       "tests": [
         "lib/bottom-jokes/jokes.test.ts"
       ],
-      "recordings": []
+      "recordings": [
+        "docs/qa/demo-recordings/manifest.json"
+      ]
     },
     {
       "id": "FR-FORECAST-01",
@@ -178,7 +198,9 @@
       "tests": [
         "lib/forecast/forecast.test.ts"
       ],
-      "recordings": []
+      "recordings": [
+        "docs/qa/demo-recordings/manifest.json"
+      ]
     },
     {
       "id": "FR-FORECAST-02",
@@ -190,7 +212,9 @@
         "lib/forecast/forecast.test.ts",
         "components/forecast/forecast-panel.test.tsx"
       ],
-      "recordings": []
+      "recordings": [
+        "docs/qa/demo-recordings/manifest.json"
+      ]
     },
     {
       "id": "FR-FORECAST-03",
@@ -202,7 +226,9 @@
         "lib/forecast/forecast.test.ts",
         "components/forecast/forecast-panel.test.tsx"
       ],
-      "recordings": []
+      "recordings": [
+        "docs/qa/demo-recordings/manifest.json"
+      ]
     },
     {
       "id": "FR-FORECAST-04",
@@ -214,7 +240,9 @@
         "lib/forecast/forecast.test.ts",
         "components/forecast/forecast-panel.test.tsx"
       ],
-      "recordings": []
+      "recordings": [
+        "docs/qa/demo-recordings/manifest.json"
+      ]
     },
     {
       "id": "FR-FORECAST-05",
@@ -225,7 +253,9 @@
       "tests": [
         "lib/forecast/forecast.test.ts"
       ],
-      "recordings": []
+      "recordings": [
+        "docs/qa/demo-recordings/manifest.json"
+      ]
     },
     {
       "id": "FR-MAP-01",
@@ -236,7 +266,9 @@
       "tests": [
         "lib/map/map.test.ts"
       ],
-      "recordings": []
+      "recordings": [
+        "docs/qa/demo-recordings/manifest.json"
+      ]
     },
     {
       "id": "FR-MAP-02",
@@ -247,7 +279,9 @@
       "tests": [
         "lib/map/map.test.ts"
       ],
-      "recordings": []
+      "recordings": [
+        "docs/qa/demo-recordings/manifest.json"
+      ]
     },
     {
       "id": "FR-MAP-03",
@@ -258,7 +292,9 @@
       "tests": [
         "lib/map/map.test.ts"
       ],
-      "recordings": []
+      "recordings": [
+        "docs/qa/demo-recordings/manifest.json"
+      ]
     },
     {
       "id": "FR-MAP-04",
@@ -269,7 +305,9 @@
       "tests": [
         "lib/map/map.test.ts"
       ],
-      "recordings": []
+      "recordings": [
+        "docs/qa/demo-recordings/manifest.json"
+      ]
     },
     {
       "id": "FR-MAP-05",
@@ -280,7 +318,9 @@
       "tests": [
         "lib/map/map.test.ts"
       ],
-      "recordings": []
+      "recordings": [
+        "docs/qa/demo-recordings/manifest.json"
+      ]
     },
     {
       "id": "FR-COMFORT-01",
@@ -293,7 +333,9 @@
         "lib/scoring/comfort.test.ts",
         "lib/scoring/comfort.test.ts"
       ],
-      "recordings": []
+      "recordings": [
+        "docs/qa/demo-recordings/manifest.json"
+      ]
     },
     {
       "id": "FR-COMFORT-02",
@@ -305,7 +347,9 @@
         "lib/scoring/comfort.test.ts",
         "lib/scoring/comfort.test.ts"
       ],
-      "recordings": []
+      "recordings": [
+        "docs/qa/demo-recordings/manifest.json"
+      ]
     },
     {
       "id": "FR-COMFORT-03",
@@ -319,7 +363,9 @@
         "lib/scoring/comfort.test.ts",
         "evals/cases/comfort.eval.ts"
       ],
-      "recordings": []
+      "recordings": [
+        "docs/qa/demo-recordings/manifest.json"
+      ]
     },
     {
       "id": "FR-COMFORT-04",
@@ -334,7 +380,9 @@
         "lib/scoring/comfort.test.ts",
         "components/forecast/forecast-panel.test.tsx"
       ],
-      "recordings": []
+      "recordings": [
+        "docs/qa/demo-recordings/manifest.json"
+      ]
     },
     {
       "id": "FR-COMFORT-05",
@@ -349,7 +397,9 @@
         "lib/scoring/comfort.test.ts",
         "components/forecast/forecast-panel.test.tsx"
       ],
-      "recordings": []
+      "recordings": [
+        "docs/qa/demo-recordings/manifest.json"
+      ]
     },
     {
       "id": "FR-ANIM-01",
@@ -360,7 +410,9 @@
       "tests": [
         "lib/animated-bg/weather-condition.test.ts"
       ],
-      "recordings": []
+      "recordings": [
+        "docs/qa/demo-recordings/manifest.json"
+      ]
     },
     {
       "id": "FR-ANIM-02",
@@ -371,7 +423,9 @@
       "tests": [
         "lib/animated-bg/daytime.test.ts"
       ],
-      "recordings": []
+      "recordings": [
+        "docs/qa/demo-recordings/manifest.json"
+      ]
     },
     {
       "id": "FR-ANIM-03",
@@ -382,7 +436,9 @@
       "tests": [
         "lib/animated-bg/background-visual.test.ts"
       ],
-      "recordings": []
+      "recordings": [
+        "docs/qa/demo-recordings/manifest.json"
+      ]
     },
     {
       "id": "FR-ANIM-04",
@@ -393,7 +449,9 @@
       "tests": [
         "lib/animated-bg/background-visual.test.ts"
       ],
-      "recordings": []
+      "recordings": [
+        "docs/qa/demo-recordings/manifest.json"
+      ]
     },
     {
       "id": "FR-COMPARE-01",
@@ -405,7 +463,9 @@
         "lib/weekend-compare/pins.test.ts",
         "lib/weekend-compare/pins.test.ts"
       ],
-      "recordings": []
+      "recordings": [
+        "docs/qa/demo-recordings/manifest.json"
+      ]
     },
     {
       "id": "FR-COMPARE-02",
@@ -417,7 +477,9 @@
       "tests": [
         "lib/weekend-compare/compare-table.test.ts"
       ],
-      "recordings": []
+      "recordings": [
+        "docs/qa/demo-recordings/manifest.json"
+      ]
     },
     {
       "id": "FR-COMPARE-03",
@@ -428,138 +490,11 @@
       "tests": [
         "lib/weekend-compare/compare-table.test.ts"
       ],
-      "recordings": []
+      "recordings": [
+        "docs/qa/demo-recordings/manifest.json"
+      ]
     }
   ],
   "failures": [],
-  "warnings": [
-    {
-      "check": "recording-evidence",
-      "msg": "FR-SHELL-01 is not referenced by any recording manifest under docs/qa/"
-    },
-    {
-      "check": "recording-evidence",
-      "msg": "FR-SHELL-02 is not referenced by any recording manifest under docs/qa/"
-    },
-    {
-      "check": "recording-evidence",
-      "msg": "FR-SHELL-03 is not referenced by any recording manifest under docs/qa/"
-    },
-    {
-      "check": "recording-evidence",
-      "msg": "FR-CLOCK-01 is not referenced by any recording manifest under docs/qa/"
-    },
-    {
-      "check": "recording-evidence",
-      "msg": "FR-SEARCH-01 is not referenced by any recording manifest under docs/qa/"
-    },
-    {
-      "check": "recording-evidence",
-      "msg": "FR-SEARCH-02 is not referenced by any recording manifest under docs/qa/"
-    },
-    {
-      "check": "recording-evidence",
-      "msg": "FR-SEARCH-03 is not referenced by any recording manifest under docs/qa/"
-    },
-    {
-      "check": "recording-evidence",
-      "msg": "FR-SEARCH-04 is not referenced by any recording manifest under docs/qa/"
-    },
-    {
-      "check": "recording-evidence",
-      "msg": "FR-SEARCH-05 is not referenced by any recording manifest under docs/qa/"
-    },
-    {
-      "check": "recording-evidence",
-      "msg": "FR-JOKES-01 is not referenced by any recording manifest under docs/qa/"
-    },
-    {
-      "check": "recording-evidence",
-      "msg": "FR-FORECAST-01 is not referenced by any recording manifest under docs/qa/"
-    },
-    {
-      "check": "recording-evidence",
-      "msg": "FR-FORECAST-02 is not referenced by any recording manifest under docs/qa/"
-    },
-    {
-      "check": "recording-evidence",
-      "msg": "FR-FORECAST-03 is not referenced by any recording manifest under docs/qa/"
-    },
-    {
-      "check": "recording-evidence",
-      "msg": "FR-FORECAST-04 is not referenced by any recording manifest under docs/qa/"
-    },
-    {
-      "check": "recording-evidence",
-      "msg": "FR-FORECAST-05 is not referenced by any recording manifest under docs/qa/"
-    },
-    {
-      "check": "recording-evidence",
-      "msg": "FR-MAP-01 is not referenced by any recording manifest under docs/qa/"
-    },
-    {
-      "check": "recording-evidence",
-      "msg": "FR-MAP-02 is not referenced by any recording manifest under docs/qa/"
-    },
-    {
-      "check": "recording-evidence",
-      "msg": "FR-MAP-03 is not referenced by any recording manifest under docs/qa/"
-    },
-    {
-      "check": "recording-evidence",
-      "msg": "FR-MAP-04 is not referenced by any recording manifest under docs/qa/"
-    },
-    {
-      "check": "recording-evidence",
-      "msg": "FR-MAP-05 is not referenced by any recording manifest under docs/qa/"
-    },
-    {
-      "check": "recording-evidence",
-      "msg": "FR-COMFORT-01 is not referenced by any recording manifest under docs/qa/"
-    },
-    {
-      "check": "recording-evidence",
-      "msg": "FR-COMFORT-02 is not referenced by any recording manifest under docs/qa/"
-    },
-    {
-      "check": "recording-evidence",
-      "msg": "FR-COMFORT-03 is not referenced by any recording manifest under docs/qa/"
-    },
-    {
-      "check": "recording-evidence",
-      "msg": "FR-COMFORT-04 is not referenced by any recording manifest under docs/qa/"
-    },
-    {
-      "check": "recording-evidence",
-      "msg": "FR-COMFORT-05 is not referenced by any recording manifest under docs/qa/"
-    },
-    {
-      "check": "recording-evidence",
-      "msg": "FR-ANIM-01 is not referenced by any recording manifest under docs/qa/"
-    },
-    {
-      "check": "recording-evidence",
-      "msg": "FR-ANIM-02 is not referenced by any recording manifest under docs/qa/"
-    },
-    {
-      "check": "recording-evidence",
-      "msg": "FR-ANIM-03 is not referenced by any recording manifest under docs/qa/"
-    },
-    {
-      "check": "recording-evidence",
-      "msg": "FR-ANIM-04 is not referenced by any recording manifest under docs/qa/"
-    },
-    {
-      "check": "recording-evidence",
-      "msg": "FR-COMPARE-01 is not referenced by any recording manifest under docs/qa/"
-    },
-    {
-      "check": "recording-evidence",
-      "msg": "FR-COMPARE-02 is not referenced by any recording manifest under docs/qa/"
-    },
-    {
-      "check": "recording-evidence",
-      "msg": "FR-COMPARE-03 is not referenced by any recording manifest under docs/qa/"
-    }
-  ]
+  "warnings": []
 }

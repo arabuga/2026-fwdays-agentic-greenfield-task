@@ -22,7 +22,7 @@
     {
       "slice": "2026-06-27-add-bottom-jokes",
       "reviewEvidence": "clean",
-      "trailerCommits": 1,
+      "trailerCommits": 2,
       "libDomains": [
         "bottom-jokes",
         "i18n"
