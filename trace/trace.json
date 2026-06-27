@@ -161,8 +161,7 @@
     {
       "id": "FR-JOKES-01",
       "specs": [
-        "openspec/specs/bottom-jokes/spec.md",
-        "openspec/changes/add-bottom-jokes/specs/bottom-jokes/spec.md"
+        "openspec/specs/bottom-jokes/spec.md"
       ],
       "planned": true,
       "tests": [
@@ -561,10 +560,6 @@
     {
       "check": "recording-evidence",
       "msg": "FR-COMPARE-03 is not referenced by any recording manifest under docs/qa/"
-    },
-    {
-      "check": "active-changes",
-      "msg": "active change \"add-bottom-jokes\" is not archived"
     }
   ]
 }

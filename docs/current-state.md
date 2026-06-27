@@ -4,13 +4,13 @@ Last updated: 2026-06-27
 
 ## Phase
 
-Project Factory workflow is active.
+Project Factory workflow is active. **MVP slice delivery complete (9/9).**
 
 Completed:
 
 - G0: scaffold, factory loop, hooks, CI, trace scripts.
 - G1: requirements, product brief, visual design.
-- G2 partial: baseline OpenSpec exists for all MVP capabilities.
+- G2: baseline OpenSpec for all MVP capabilities.
 - G3: MVP capability plan exists.
 - G4 archived: `add-comfort-score`.
 - G4 archived: `add-shell`.
@@ -20,23 +20,25 @@ Completed:
 - G4 archived: `add-weekend-compare`.
 - G4 archived: `add-top-clock`.
 - G4 archived: `add-animated-bg`.
+- G4 archived: `add-bottom-jokes`.
 
 ## Current Slice
 
-Active slice: `add-bottom-jokes`
+Active slice: none (MVP slices complete)
 
-Last completed slice: `add-animated-bg`
+Last completed slice: `add-bottom-jokes`
 
 Status:
 
-- Deterministic footer jokes and Open-Meteo/OSM credits in `AppFooter`.
-- Validation green on 2026-06-27; manual smoke and archive pending.
-- Prior slice archived at `openspec/changes/archive/2026-06-27-add-animated-bg`
-  (commit `ac17595` / archive `b19979b`).
+- Deterministic footer jokes and Open-Meteo/OSM credits shipped in `AppFooter`.
+- Review-gate completed for `add-bottom-jokes`; archived at
+  `openspec/changes/archive/2026-06-27-add-bottom-jokes`.
+- Manual browser smoke passed on 2026-06-27.
+- Commit `9b1c4ab` carries `Slice: add-bottom-jokes`.
 
 ## Validation Snapshot
 
-Last green (`add-bottom-jokes` implementation, 2026-06-27):
+Last green (`add-bottom-jokes` archive, 2026-06-27):
 
 - `npm run test:run` (50 tests)
 - `npm run lint`
@@ -46,14 +48,15 @@ Last green (`add-bottom-jokes` implementation, 2026-06-27):
 
 Expected warnings:
 
-- Full MVP recording evidence incomplete until QA proof lands.
+- Recording manifests under `docs/qa/` still incomplete (cross-cutting QA proof).
 
 ## Known Deferrals
 
-- None on the MVP slice list after archive.
+- QA proof pack (recordings, acceptance report) not yet authored.
+- Future-phase scope from `docs/requirements.md` (accounts, push, native app).
 
 ## Next Actions
 
-1. Manual smoke `add-bottom-jokes`: joke + credits visible; joke updates with city.
-2. Review-gate and archive `add-bottom-jokes`.
-3. MVP slice delivery complete — run final cross-cutting validation.
+1. Run final cross-cutting validation (`check:trace`, trajectory/eval if evidence exists).
+2. Author QA proof pack and recording manifests per `evals/README.md`.
+3. Optional: push branch and open PR for workshop delivery.
