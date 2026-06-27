@@ -15,7 +15,7 @@ Result: PASS, 1 warning(s)
 | 2026-06-27-add-forecast | clean | 1 | yes | forecast, i18n |
 | 2026-06-27-add-map | clean | 3 | yes | map, i18n |
 | 2026-06-27-add-shell | clean | 1 | yes | i18n, shell |
-| 2026-06-27-add-top-clock | clean | 1 | yes | i18n, top-clock |
+| 2026-06-27-add-top-clock | clean | 2 | yes | i18n, top-clock |
 | 2026-06-27-add-weekend-compare | clean | 2 | yes | i18n, weekend-compare |
 
 ## Cross-slice module overlap

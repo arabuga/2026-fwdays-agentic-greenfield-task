@@ -349,30 +349,50 @@
     },
     {
       "id": "FR-ANIM-01",
-      "specs": [],
+      "specs": [
+        "openspec/specs/animated-bg/spec.md",
+        "openspec/changes/add-animated-bg/specs/animated-bg/spec.md"
+      ],
       "planned": true,
-      "tests": [],
+      "tests": [
+        "lib/animated-bg/weather-condition.test.ts"
+      ],
       "recordings": []
     },
     {
       "id": "FR-ANIM-02",
-      "specs": [],
+      "specs": [
+        "openspec/specs/animated-bg/spec.md",
+        "openspec/changes/add-animated-bg/specs/animated-bg/spec.md"
+      ],
       "planned": true,
-      "tests": [],
+      "tests": [
+        "lib/animated-bg/daytime.test.ts"
+      ],
       "recordings": []
     },
     {
       "id": "FR-ANIM-03",
-      "specs": [],
+      "specs": [
+        "openspec/specs/animated-bg/spec.md",
+        "openspec/changes/add-animated-bg/specs/animated-bg/spec.md"
+      ],
       "planned": true,
-      "tests": [],
+      "tests": [
+        "lib/animated-bg/background-visual.test.ts"
+      ],
       "recordings": []
     },
     {
       "id": "FR-ANIM-04",
-      "specs": [],
+      "specs": [
+        "openspec/specs/animated-bg/spec.md",
+        "openspec/changes/add-animated-bg/specs/animated-bg/spec.md"
+      ],
       "planned": true,
-      "tests": [],
+      "tests": [
+        "lib/animated-bg/background-visual.test.ts"
+      ],
       "recordings": []
     },
     {
@@ -418,40 +438,8 @@
       "msg": "FR-JOKES-01 is not cited by any spec under openspec/specs/ (partial G2 — expected until all capability specs land)"
     },
     {
-      "check": "spec-mention",
-      "msg": "FR-ANIM-01 is not cited by any spec under openspec/specs/ (partial G2 — expected until all capability specs land)"
-    },
-    {
-      "check": "spec-mention",
-      "msg": "FR-ANIM-02 is not cited by any spec under openspec/specs/ (partial G2 — expected until all capability specs land)"
-    },
-    {
-      "check": "spec-mention",
-      "msg": "FR-ANIM-03 is not cited by any spec under openspec/specs/ (partial G2 — expected until all capability specs land)"
-    },
-    {
-      "check": "spec-mention",
-      "msg": "FR-ANIM-04 is not cited by any spec under openspec/specs/ (partial G2 — expected until all capability specs land)"
-    },
-    {
       "check": "test-trace",
       "msg": "FR-JOKES-01 has no test annotated \"@trace FR-JOKES-01\""
-    },
-    {
-      "check": "test-trace",
-      "msg": "FR-ANIM-01 has no test annotated \"@trace FR-ANIM-01\""
-    },
-    {
-      "check": "test-trace",
-      "msg": "FR-ANIM-02 has no test annotated \"@trace FR-ANIM-02\""
-    },
-    {
-      "check": "test-trace",
-      "msg": "FR-ANIM-03 has no test annotated \"@trace FR-ANIM-03\""
-    },
-    {
-      "check": "test-trace",
-      "msg": "FR-ANIM-04 has no test annotated \"@trace FR-ANIM-04\""
     },
     {
       "check": "recording-evidence",
@@ -580,6 +568,10 @@
     {
       "check": "recording-evidence",
       "msg": "FR-COMPARE-03 is not referenced by any recording manifest under docs/qa/"
+    },
+    {
+      "check": "active-changes",
+      "msg": "active change \"add-animated-bg\" is not archived"
     }
   ]
 }

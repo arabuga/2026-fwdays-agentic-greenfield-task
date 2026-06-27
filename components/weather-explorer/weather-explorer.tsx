@@ -1,6 +1,7 @@
 "use client";
 
 import { useState } from "react";
+import { AnimatedBackground } from "@/components/animated-bg/animated-background";
 import { CitySearch } from "@/components/city-search/city-search";
 import { ForecastPanel } from "@/components/forecast/forecast-panel";
 import { MapPanel } from "@/components/map/map-panel";
@@ -37,7 +38,9 @@ export function WeatherExplorer() {
   }
 
   return (
-    <main className="mx-auto grid w-full max-w-7xl gap-6 px-5 pb-10 pt-4 sm:px-8 md:grid-cols-2 xl:grid-cols-[minmax(18rem,0.9fr)_minmax(0,1.35fr)_minmax(18rem,1fr)]">
+    <>
+      <AnimatedBackground location={selectedLocation} />
+      <main className="mx-auto grid w-full max-w-7xl gap-6 px-5 pb-10 pt-4 sm:px-8 md:grid-cols-2 xl:grid-cols-[minmax(18rem,0.9fr)_minmax(0,1.35fr)_minmax(18rem,1fr)]">
       <section className="md:col-span-2 xl:col-span-1" aria-labelledby="shell-hero-title">
         <div className="flex h-full flex-col items-center gap-6 rounded-[2rem] border border-white/70 bg-white/80 px-6 py-12 text-center shadow-[0_24px_80px_rgba(26,35,50,0.10)] backdrop-blur dark:border-white/10 dark:bg-[#1a2332]/90 sm:px-10 xl:items-start xl:text-left">
           <p className="text-sm font-medium uppercase tracking-[0.24em] text-[#3b6fd9] dark:text-[#6b9fff]">
@@ -119,5 +122,6 @@ export function WeatherExplorer() {
 
       <MapPanel location={selectedLocation} onSelectLocation={handleSelectLocation} />
     </main>
+    </>
   );
 }

@@ -11,7 +11,8 @@ Completed:
 - G0: scaffold, factory loop, hooks, CI, trace scripts.
 - G1: requirements, product brief, visual design.
 - G2 partial: baseline OpenSpec exists for `comfort-score`, `shell`,
-  `city-search`, `forecast`, `map`, `weekend-compare`, and `top-clock`.
+  `city-search`, `forecast`, `map`, `weekend-compare`, `top-clock`, and
+  `animated-bg`.
 - G3: MVP capability plan exists.
 - G4 archived: `add-comfort-score`.
 - G4 archived: `add-shell`.
@@ -29,18 +30,18 @@ Last completed slice: `add-top-clock`
 
 Status:
 
-- Live local-time clock in header shipped under `components/top-clock/` and
-  `lib/top-clock/format-local-time.ts`.
-- Review-gate completed for `add-top-clock`; archived at
-  `openspec/changes/archive/2026-06-27-add-top-clock`.
-- Manual browser smoke passed on 2026-06-27.
-- Commit `3b4af42` carries `Slice: add-top-clock`.
+- Condition-driven animated sky behind content (`AnimatedBackground`,
+  `lib/animated-bg/`).
+- Reuses forecast cache for weather code and location sunrise/sunset.
+- Validation green on 2026-06-27; manual smoke and archive pending.
+- Prior slice archived at `openspec/changes/archive/2026-06-27-add-top-clock`
+  (commit `3b4af42` / archive `b26ce41`).
 
 ## Validation Snapshot
 
-Last green (`add-top-clock` archive, 2026-06-27):
+Last green (`add-animated-bg` implementation, 2026-06-27):
 
-- `npm run test:run` (37 tests)
+- `npm run test:run` (47 tests)
 - `npm run lint`
 - `npm run build`
 - `npx @fission-ai/openspec@latest validate --all --strict`
@@ -48,16 +49,15 @@ Last green (`add-top-clock` archive, 2026-06-27):
 
 Expected warnings:
 
-- Partial G2: specs/tests/recordings missing for `animated-bg`, `bottom-jokes`.
+- Partial G2: specs/tests/recordings missing for `bottom-jokes`.
 - Full MVP evidence incomplete until recordings land.
 
 ## Known Deferrals
 
-- Animated background and footer jokes remain as polish slices.
+- Footer jokes remain as the final polish slice.
 
 ## Next Actions
 
-1. OpenSpec propose + implement `add-animated-bg` (condition-driven gradient,
-   particles, reduced-motion fallback).
-2. Review-gate, smoke, archive `add-animated-bg`.
+1. Manual smoke `add-animated-bg`: gradient follows location/weather; reduced motion is static.
+2. Review-gate and archive `add-animated-bg`.
 3. Finish `add-bottom-jokes`.
