@@ -70,4 +70,10 @@ export const en = {
     precipitation: "Precip",
     comfort: "Comfort",
   },
+  footer: {
+    creditsLead: "Weather data by",
+    creditsSeparator: ", maps by ",
+    openMeteoLabel: "Open-Meteo",
+    osmLabel: "OpenStreetMap",
+  },
 } as const;

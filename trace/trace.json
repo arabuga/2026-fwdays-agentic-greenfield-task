@@ -160,9 +160,14 @@
     },
     {
       "id": "FR-JOKES-01",
-      "specs": [],
+      "specs": [
+        "openspec/specs/bottom-jokes/spec.md",
+        "openspec/changes/add-bottom-jokes/specs/bottom-jokes/spec.md"
+      ],
       "planned": true,
-      "tests": [],
+      "tests": [
+        "lib/bottom-jokes/jokes.test.ts"
+      ],
       "recordings": []
     },
     {
@@ -430,14 +435,6 @@
   "failures": [],
   "warnings": [
     {
-      "check": "spec-mention",
-      "msg": "FR-JOKES-01 is not cited by any spec under openspec/specs/ (partial G2 — expected until all capability specs land)"
-    },
-    {
-      "check": "test-trace",
-      "msg": "FR-JOKES-01 has no test annotated \"@trace FR-JOKES-01\""
-    },
-    {
       "check": "recording-evidence",
       "msg": "FR-SHELL-01 is not referenced by any recording manifest under docs/qa/"
     },
@@ -564,6 +561,10 @@
     {
       "check": "recording-evidence",
       "msg": "FR-COMPARE-03 is not referenced by any recording manifest under docs/qa/"
+    },
+    {
+      "check": "active-changes",
+      "msg": "active change \"add-bottom-jokes\" is not archived"
     }
   ]
 }

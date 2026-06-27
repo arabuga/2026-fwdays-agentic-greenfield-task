@@ -26,12 +26,6 @@ export default function Home() {
       </header>
 
       <WeatherExplorer />
-
-      <footer className="relative z-10 mx-auto w-full max-w-7xl px-5 pb-8 text-sm text-[#5c6b7a] sm:px-8 dark:text-[#8b9bb0]">
-        <p>
-          {shellContent.footerText}
-        </p>
-      </footer>
     </div>
   );
 }

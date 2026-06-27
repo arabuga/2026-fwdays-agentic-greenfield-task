@@ -70,4 +70,10 @@ export const uk = {
     precipitation: "Опади",
     comfort: "Комфорт",
   },
+  footer: {
+    creditsLead: "Дані погоди від",
+    creditsSeparator: ", карти від ",
+    openMeteoLabel: "Open-Meteo",
+    osmLabel: "OpenStreetMap",
+  },
 } as const;

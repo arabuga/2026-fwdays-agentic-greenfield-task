@@ -10,8 +10,7 @@ Completed:
 
 - G0: scaffold, factory loop, hooks, CI, trace scripts.
 - G1: requirements, product brief, visual design.
-- G2 partial: baseline OpenSpec exists for all MVP capabilities except
-  `bottom-jokes`.
+- G2 partial: baseline OpenSpec exists for all MVP capabilities.
 - G3: MVP capability plan exists.
 - G4 archived: `add-comfort-score`.
 - G4 archived: `add-shell`.
@@ -30,16 +29,16 @@ Last completed slice: `add-animated-bg`
 
 Status:
 
-- Condition-driven animated sky archived at
-  `openspec/changes/archive/2026-06-27-add-animated-bg`.
-- Manual browser smoke passed on 2026-06-27.
-- Commit `ac17595` carries `Slice: add-animated-bg`; archive pending commit.
+- Deterministic footer jokes and Open-Meteo/OSM credits in `AppFooter`.
+- Validation green on 2026-06-27; manual smoke and archive pending.
+- Prior slice archived at `openspec/changes/archive/2026-06-27-add-animated-bg`
+  (commit `ac17595` / archive `b19979b`).
 
 ## Validation Snapshot
 
-Last green (`add-animated-bg` archive, 2026-06-27):
+Last green (`add-bottom-jokes` implementation, 2026-06-27):
 
-- `npm run test:run` (47 tests)
+- `npm run test:run` (50 tests)
 - `npm run lint`
 - `npm run build`
 - `npx @fission-ai/openspec@latest validate --all --strict`
@@ -47,16 +46,14 @@ Last green (`add-animated-bg` archive, 2026-06-27):
 
 Expected warnings:
 
-- Partial G2: specs/tests/recordings missing for `bottom-jokes`.
-- Full MVP evidence incomplete until recordings land.
+- Full MVP recording evidence incomplete until QA proof lands.
 
 ## Known Deferrals
 
-- None on the MVP slice list after `add-bottom-jokes`.
+- None on the MVP slice list after archive.
 
 ## Next Actions
 
-1. OpenSpec propose + implement `add-bottom-jokes` (deterministic Ukrainian jokes +
-   Open-Meteo/OSM credits in footer).
-2. Review-gate, smoke, archive `add-bottom-jokes`.
-3. MVP slice delivery complete — run final cross-cutting validation and QA proof.
+1. Manual smoke `add-bottom-jokes`: joke + credits visible; joke updates with city.
+2. Review-gate and archive `add-bottom-jokes`.
+3. MVP slice delivery complete — run final cross-cutting validation.

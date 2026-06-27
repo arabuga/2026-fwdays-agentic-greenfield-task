@@ -2,6 +2,7 @@
 
 import { useState } from "react";
 import { AnimatedBackground } from "@/components/animated-bg/animated-background";
+import { AppFooter } from "@/components/bottom-jokes/app-footer";
 import { CitySearch } from "@/components/city-search/city-search";
 import { ForecastPanel } from "@/components/forecast/forecast-panel";
 import { MapPanel } from "@/components/map/map-panel";
@@ -122,6 +123,7 @@ export function WeatherExplorer() {
 
       <MapPanel location={selectedLocation} onSelectLocation={handleSelectLocation} />
     </main>
+    <AppFooter location={selectedLocation} />
     </>
   );
 }
