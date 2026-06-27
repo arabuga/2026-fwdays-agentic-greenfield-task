@@ -1,23 +1,36 @@
-import {
-  normalizeGeocodingResponse,
-  type CityLocation,
-  type OpenMeteoGeocodingResponse,
-} from "@/lib/city-search/geocoding";
+import { countryCodeToFlag, type CityLocation } from "@/lib/city-search/geocoding";
 
-const REVERSE_GEOCODING_ENDPOINT = "https://geocoding-api.open-meteo.com/v1/reverse";
+const NOMINATIM_REVERSE_ENDPOINT = "https://nominatim.openstreetmap.org/reverse";
 const DEFAULT_LANGUAGE = "uk";
+
+export type NominatimReverseResponse = {
+  place_id?: number;
+  lat?: string;
+  lon?: string;
+  display_name?: string;
+  address?: {
+    city?: string;
+    town?: string;
+    village?: string;
+    municipality?: string;
+    state?: string;
+    country?: string;
+    country_code?: string;
+  };
+};
 
 export function buildReverseGeocodingUrl(
   latitude: number,
   longitude: number,
   options: { language?: string } = {},
 ): URL {
-  const url = new URL(REVERSE_GEOCODING_ENDPOINT);
-  url.searchParams.set("latitude", String(latitude));
-  url.searchParams.set("longitude", String(longitude));
-  url.searchParams.set("count", "1");
-  url.searchParams.set("language", options.language ?? DEFAULT_LANGUAGE);
+  const url = new URL(NOMINATIM_REVERSE_ENDPOINT);
+  url.searchParams.set("lat", String(latitude));
+  url.searchParams.set("lon", String(longitude));
   url.searchParams.set("format", "json");
+  url.searchParams.set("addressdetails", "1");
+  url.searchParams.set("accept-language", options.language ?? DEFAULT_LANGUAGE);
+  url.searchParams.set("zoom", "10");
   return url;
 }
 
@@ -45,19 +58,40 @@ export function locationFromCoordinates(
 export function normalizeReverseGeocodingResponse(
   latitude: number,
   longitude: number,
-  response: OpenMeteoGeocodingResponse,
+  response: NominatimReverseResponse,
 ): CityLocation {
-  const [location] = normalizeGeocodingResponse(response);
+  const address = response.address;
+  const name =
+    address?.city?.trim() ||
+    address?.town?.trim() ||
+    address?.village?.trim() ||
+    address?.municipality?.trim() ||
+    response.display_name?.split(",")[0]?.trim() ||
+    `${latitude.toFixed(2)}, ${longitude.toFixed(2)}`;
 
-  if (!location) {
-    return locationFromCoordinates(latitude, longitude);
-  }
+  const region = address?.state?.trim() || null;
+  const country = address?.country?.trim() || null;
+  const countryCode = normalizeCountryCode(address?.country_code);
+  const label = [name, region, country].filter(Boolean).join(", ");
 
   return {
-    ...location,
+    id: response.place_id ?? syntheticLocationId(latitude, longitude),
+    name,
     latitude,
     longitude,
+    countryCode,
+    country,
+    region,
+    timezone: null,
+    population: null,
+    label,
+    flag: countryCodeToFlag(countryCode),
   };
+}
+
+function normalizeCountryCode(countryCode: string | null | undefined): string | null {
+  const normalized = countryCode?.trim().toUpperCase();
+  return normalized && /^[A-Z]{2}$/.test(normalized) ? normalized : null;
 }
 
 function syntheticLocationId(latitude: number, longitude: number): number {

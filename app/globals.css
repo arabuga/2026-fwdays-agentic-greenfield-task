@@ -48,3 +48,24 @@ body {
 ::selection {
   background: color-mix(in srgb, var(--primary) 22%, transparent);
 }
+
+/* Leaflet: Tailwind preflight sets img { max-width: 100% }, which breaks tile layout. */
+.leaflet-container {
+  height: 100%;
+  width: 100%;
+  z-index: 0;
+  font: inherit;
+}
+
+.leaflet-container img {
+  max-width: none !important;
+  max-height: none !important;
+}
+
+.leaflet-pane,
+.leaflet-tile,
+.leaflet-marker-icon,
+.leaflet-marker-shadow {
+  max-width: none !important;
+  max-height: none !important;
+}

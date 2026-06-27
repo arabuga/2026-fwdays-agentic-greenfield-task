@@ -14,18 +14,6 @@ import {
   normalizeReverseGeocodingResponse,
 } from "./reverse-geocode";
 
-const rawKyiv = {
-  id: 703448,
-  name: "Kyiv",
-  latitude: 50.45466,
-  longitude: 30.5238,
-  country_code: "UA",
-  country: "Україна",
-  admin1: "Kyiv",
-  timezone: "Europe/Kyiv",
-  population: 2797553,
-};
-
 describe("map helpers", () => {
   // @trace FR-MAP-01
   // @trace FR-MAP-04
@@ -41,27 +29,35 @@ describe("map helpers", () => {
     expect(
       getMarkerPopupLabel({
         name: "Kyiv",
-        label: "Kyiv, Kyiv, Україна",
+        label: "Kyiv, Kyiv, Україna",
       }),
-    ).toBe("Kyiv, Kyiv, Україна");
+    ).toBe("Kyiv, Kyiv, Україna");
   });
 
   // @trace FR-MAP-03
-  it("builds reverse geocoding URLs and normalizes click results", () => {
+  it("builds Nominatim reverse URLs and normalizes click results", () => {
     const url = buildReverseGeocodingUrl(50.45, 30.52);
 
-    expect(url.pathname).toBe("/v1/reverse");
-    expect(url.searchParams.get("latitude")).toBe("50.45");
-    expect(url.searchParams.get("longitude")).toBe("30.52");
-    expect(url.searchParams.get("language")).toBe("uk");
+    expect(url.hostname).toBe("nominatim.openstreetmap.org");
+    expect(url.pathname).toBe("/reverse");
+    expect(url.searchParams.get("lat")).toBe("50.45");
+    expect(url.searchParams.get("lon")).toBe("30.52");
+    expect(url.searchParams.get("accept-language")).toBe("uk");
 
     const location = normalizeReverseGeocodingResponse(50.45466, 30.5238, {
-      results: [rawKyiv],
+      place_id: 421866,
+      address: {
+        city: "Kyiv",
+        state: "Kyiv",
+        country: "Україна",
+        country_code: "ua",
+      },
     });
 
     expect(location.name).toBe("Kyiv");
     expect(location.latitude).toBe(50.45466);
     expect(location.longitude).toBe(30.5238);
+    expect(location.flag).toBe("🇺🇦");
 
     const fallback = locationFromCoordinates(48.1, 24.7);
     expect(fallback.label).toBe("48.10, 24.70");

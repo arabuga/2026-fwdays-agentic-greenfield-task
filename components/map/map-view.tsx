@@ -1,7 +1,6 @@
 "use client";
 
 import { useEffect } from "react";
-import L from "leaflet";
 import {
   MapContainer,
   Marker,
@@ -10,32 +9,21 @@ import {
   useMap,
   useMapEvents,
 } from "react-leaflet";
-import markerIcon2x from "leaflet/dist/images/marker-icon-2x.png";
-import markerIcon from "leaflet/dist/images/marker-icon.png";
-import markerShadow from "leaflet/dist/images/marker-shadow.png";
 import type { CityLocation } from "@/lib/city-search/geocoding";
 import {
   DEFAULT_MAP_ZOOM,
   getMapCenter,
   getMarkerPopupLabel,
+  MAP_MIN_HEIGHT_PX,
   OSM_ATTRIBUTION,
   OSM_TILE_URL,
 } from "@/lib/map/map-config";
+import { cityMarkerIcon } from "./map-icons";
 
 type MapViewProps = {
   location: CityLocation;
   onMapClick: (latitude: number, longitude: number) => void;
 };
-
-function RecenterMap({ location }: { location: CityLocation }) {
-  const map = useMap();
-
-  useEffect(() => {
-    map.setView(getMapCenter(location), DEFAULT_MAP_ZOOM);
-  }, [location, map]);
-
-  return null;
-}
 
 function MapClickHandler({
   onMapClick,
@@ -51,28 +39,54 @@ function MapClickHandler({
   return null;
 }
 
-export function MapView({ location, onMapClick }: MapViewProps) {
+function MapSizeSync() {
+  const map = useMap();
+
   useEffect(() => {
-    delete (L.Icon.Default.prototype as unknown as { _getIconUrl?: unknown })._getIconUrl;
-    L.Icon.Default.mergeOptions({
-      iconRetinaUrl: markerIcon2x.src,
-      iconUrl: markerIcon.src,
-      shadowUrl: markerShadow.src,
-    });
-  }, []);
+    const syncSize = () => {
+      map.invalidateSize({ animate: false });
+    };
+
+    syncSize();
+    const frame = window.requestAnimationFrame(syncSize);
+
+    const container = map.getContainer().parentElement;
+    const observer =
+      container &&
+      new ResizeObserver(() => {
+        syncSize();
+      });
+
+    if (container && observer) {
+      observer.observe(container);
+    }
+
+    return () => {
+      window.cancelAnimationFrame(frame);
+      observer?.disconnect();
+    };
+  }, [map]);
+
+  return null;
+}
+
+export function MapView({ location, onMapClick }: MapViewProps) {
+  const mapKey = `${location.id}-${location.latitude.toFixed(4)}-${location.longitude.toFixed(4)}`;
 
   return (
     <MapContainer
+      key={mapKey}
       center={getMapCenter(location)}
       zoom={DEFAULT_MAP_ZOOM}
       scrollWheelZoom
-      className="h-full min-h-[320px] w-full rounded-[1.25rem] z-0"
+      style={{ height: MAP_MIN_HEIGHT_PX, width: "100%" }}
+      className="z-0 rounded-[1.25rem]"
       aria-label={location.label}
     >
       <TileLayer url={OSM_TILE_URL} attribution={OSM_ATTRIBUTION} />
-      <RecenterMap location={location} />
+      <MapSizeSync />
       <MapClickHandler onMapClick={onMapClick} />
-      <Marker position={getMapCenter(location)}>
+      <Marker position={getMapCenter(location)} icon={cityMarkerIcon}>
         <Popup>{getMarkerPopupLabel(location)}</Popup>
       </Marker>
     </MapContainer>

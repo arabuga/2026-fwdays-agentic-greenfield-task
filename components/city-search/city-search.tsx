@@ -21,7 +21,7 @@ export function CitySearch({ selectedLocation, onSelectLocation }: CitySearchPro
   const inputId = useId();
   const hintId = useId();
   const listboxId = useId();
-  const [query, setQuery] = useState("");
+  const [query, setQuery] = useState(() => selectedLocation?.name ?? "");
   const [suggestions, setSuggestions] = useState<CityLocation[]>([]);
   const [status, setStatus] = useState<"idle" | "loading" | "empty" | "error">("idle");
 

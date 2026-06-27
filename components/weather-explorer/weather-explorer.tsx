@@ -30,6 +30,11 @@ export function WeatherExplorer() {
           </div>
 
           <CitySearch
+            key={
+              selectedLocation
+                ? `${selectedLocation.id}-${selectedLocation.latitude.toFixed(4)}-${selectedLocation.longitude.toFixed(4)}`
+                : "empty"
+            }
             selectedLocation={selectedLocation}
             onSelectLocation={setSelectedLocation}
           />

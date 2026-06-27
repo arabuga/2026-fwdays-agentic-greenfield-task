@@ -52,7 +52,7 @@ export function MapPanel({ location, onSelectLocation }: MapPanelProps) {
         {uk.map.hint}
       </p>
 
-      <div className="relative mt-5 flex-1 overflow-hidden rounded-[1.25rem] border border-[#d8e3f0] dark:border-white/10">
+      <div className="relative mt-5 h-[320px] shrink-0 overflow-hidden rounded-[1.25rem] border border-[#d8e3f0] dark:border-white/10">
         {location ? (
           <MapView location={location} onMapClick={handleMapClick} />
         ) : (

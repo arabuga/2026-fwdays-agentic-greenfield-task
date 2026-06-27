@@ -26,14 +26,20 @@
 
 ## Open-Meteo API Contract
 
-Endpoint: `https://geocoding-api.open-meteo.com/v1/reverse`
+Endpoint: `https://nominatim.openstreetmap.org/reverse`
+
+Open-Meteo geocoding has no reverse endpoint yet, so map clicks use Nominatim
+(same OSM ecosystem as map tiles) with coordinate fallback when lookup fails.
 
 Parameters:
 
-- `latitude`, `longitude`
-- `language=uk`
-- `count=1`
+- `lat`, `lon`
 - `format=json`
+- `addressdetails=1`
+- `accept-language=uk`
+- `zoom=10`
+
+Request header: `User-Agent: WeatherExplorer/1.0 (education; contact: local-dev)`
 
 ## Error Handling
 
