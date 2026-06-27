@@ -5,7 +5,7 @@ archived slice took: review evidence, `Slice:` trailers, and module scope.
 It does NOT verify test-first ordering or test integrity (not derivable from
 one-commit-per-slice history) — those are graded by the trajectory-eval workflow.
 
-Scope: 6 archived slice(s).
+Scope: 7 archived slice(s).
 Result: PASS, 1 warning(s)
 
 | Slice | Review evidence | Trailer commits | design+tasks | lib domains touched |
@@ -15,11 +15,12 @@ Result: PASS, 1 warning(s)
 | 2026-06-27-add-forecast | clean | 1 | yes | forecast, i18n |
 | 2026-06-27-add-map | clean | 3 | yes | map, i18n |
 | 2026-06-27-add-shell | clean | 1 | yes | i18n, shell |
+| 2026-06-27-add-top-clock | clean | 1 | yes | i18n, top-clock |
 | 2026-06-27-add-weekend-compare | clean | 2 | yes | i18n, weekend-compare |
 
 ## Cross-slice module overlap
 
-- `lib/i18n/` touched by: 2026-06-27-add-city-search, 2026-06-27-add-forecast, 2026-06-27-add-map, 2026-06-27-add-shell, 2026-06-27-add-weekend-compare
+- `lib/i18n/` touched by: 2026-06-27-add-city-search, 2026-06-27-add-forecast, 2026-06-27-add-map, 2026-06-27-add-shell, 2026-06-27-add-top-clock, 2026-06-27-add-weekend-compare
 
 ## Failures
 
@@ -27,4 +28,4 @@ None.
 
 ## Warnings
 
-- **in-scope**: lib/i18n/ modified by 5 slices (2026-06-27-add-city-search, 2026-06-27-add-forecast, 2026-06-27-add-map, 2026-06-27-add-shell, 2026-06-27-add-weekend-compare) — review for scope drift
+- **in-scope**: lib/i18n/ modified by 6 slices (2026-06-27-add-city-search, 2026-06-27-add-forecast, 2026-06-27-add-map, 2026-06-27-add-shell, 2026-06-27-add-top-clock, 2026-06-27-add-weekend-compare) — review for scope drift

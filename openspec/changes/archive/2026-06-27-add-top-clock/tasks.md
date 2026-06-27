@@ -31,6 +31,6 @@
 - [x] 6.5 `npx @fission-ai/openspec@latest validate --all --strict`
 - [x] 6.6 `node scripts/check-traceability.mjs --pre-commit --check-fresh`
 - [x] 6.7 Update `docs/current-state.md`
-- [ ] 6.8 Run review-gate workflow; fix confirmed findings; re-run 6.1–6.6
-- [ ] 6.9 Manual browser smoke: clock visible and ticks across a minute boundary.
-- [ ] 6.10 Archive after 6.1–6.9 pass
+- [x] 6.8 Run review-gate workflow; fix confirmed findings; re-run 6.1–6.6
+- [x] 6.9 Manual browser smoke: clock visible and ticks across a minute boundary.
+- [x] 6.10 Archive after 6.1–6.9 pass
