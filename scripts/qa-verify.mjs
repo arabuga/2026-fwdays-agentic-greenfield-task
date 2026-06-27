@@ -63,12 +63,12 @@ const commands = [
   {
     name: "openspec-all",
     command: "npx",
-    args: ["openspec", "validate", "--all", "--strict"],
+    args: ["@fission-ai/openspec@latest", "validate", "--all", "--strict"],
   },
   {
     name: "openspec-active-list",
     command: "npx",
-    args: ["openspec", "list"],
+    args: ["@fission-ai/openspec@latest", "list"],
   },
 ];
 

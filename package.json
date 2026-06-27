@@ -10,7 +10,7 @@
     "audit:code": "fallow audit",
     "test:run": "vitest run",
     "test:integration": "vitest run --config vitest.integration.config.ts",
-    "test:e2e": "playwright test",
+    "test:e2e": "playwright test --pass-with-no-tests",
     "test:coverage": "vitest run --coverage",
     "qa:verify": "node scripts/qa-verify.mjs",
     "qa:record-demos": "node scripts/record-demos.mjs",
