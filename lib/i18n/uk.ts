@@ -19,6 +19,9 @@ export const uk = {
     sidePanelText: "Спочатку пошук, потім прогноз, карта і порівняння вихідних.",
     footerText: "Open-Meteo та OpenStreetMap будуть підключені у наступних slices.",
   },
+  clock: {
+    label: "Поточний локальний час",
+  },
   citySearch: {
     label: "Пошук міста",
     placeholder: "Наприклад, Львів або Одеса",

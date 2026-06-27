@@ -53,7 +53,7 @@
     {
       "slice": "2026-06-27-add-weekend-compare",
       "reviewEvidence": "clean",
-      "trailerCommits": 1,
+      "trailerCommits": 2,
       "libDomains": [
         "i18n",
         "weekend-compare"

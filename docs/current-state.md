@@ -28,19 +28,16 @@ Last completed slice: `add-weekend-compare`
 
 Status:
 
-- Pin up to three cities, compare-weekend toggle, Sat/Sun table with comfort,
-  and make-active actions shipped under `components/weekend-compare/` and
-  `lib/weekend-compare/`.
-- Review-gate completed for `add-weekend-compare`; archived at
-  `openspec/changes/archive/2026-06-27-add-weekend-compare`.
-- Manual browser smoke passed on 2026-06-27.
-- Commit `09806b4` carries `Slice: add-weekend-compare`.
+- Live local-time clock in header (`TopClock`, `lib/top-clock/format-local-time.ts`).
+- Validation green on 2026-06-27; manual smoke and archive pending.
+- Prior slice archived at `openspec/changes/archive/2026-06-27-add-weekend-compare`
+  (commit `09806b4` / archive `b9d392f`).
 
 ## Validation Snapshot
 
-Last green (`add-weekend-compare` archive, 2026-06-27):
+Last green (`add-top-clock` implementation, 2026-06-27):
 
-- `npm run test:run` (34 tests)
+- `npm run test:run` (37 tests)
 - `npm run lint`
 - `npm run build`
 - `npx @fission-ai/openspec@latest validate --all --strict`
@@ -59,7 +56,6 @@ Expected warnings:
 
 ## Next Actions
 
-1. OpenSpec propose + implement `add-top-clock` (live local-time clock in header,
-   `FR-CLOCK-01`).
-2. Review-gate, smoke, archive `add-top-clock`.
+1. Manual smoke `add-top-clock`: clock visible in header, ticks on minute boundary.
+2. Review-gate and archive `add-top-clock`.
 3. Finish remaining polish: `add-animated-bg`, `add-bottom-jokes`.

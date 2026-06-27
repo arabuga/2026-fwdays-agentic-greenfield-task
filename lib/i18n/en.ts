@@ -19,6 +19,9 @@ export const en = {
     sidePanelText: "Search first, then forecast, map, and weekend comparison.",
     footerText: "Open-Meteo and OpenStreetMap will be connected in upcoming slices.",
   },
+  clock: {
+    label: "Current local time",
+  },
   citySearch: {
     label: "City search",
     placeholder: "For example, Lviv or Odesa",
