@@ -11,6 +11,15 @@
       "processComplete": true
     },
     {
+      "slice": "2026-06-27-add-animated-bg",
+      "reviewEvidence": "clean",
+      "trailerCommits": 1,
+      "libDomains": [
+        "animated-bg"
+      ],
+      "processComplete": true
+    },
+    {
       "slice": "2026-06-27-add-city-search",
       "reviewEvidence": "clean",
       "trailerCommits": 1,

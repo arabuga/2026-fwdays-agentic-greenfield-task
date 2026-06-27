@@ -10,9 +10,8 @@ Completed:
 
 - G0: scaffold, factory loop, hooks, CI, trace scripts.
 - G1: requirements, product brief, visual design.
-- G2 partial: baseline OpenSpec exists for `comfort-score`, `shell`,
-  `city-search`, `forecast`, `map`, `weekend-compare`, `top-clock`, and
-  `animated-bg`.
+- G2 partial: baseline OpenSpec exists for all MVP capabilities except
+  `bottom-jokes`.
 - G3: MVP capability plan exists.
 - G4 archived: `add-comfort-score`.
 - G4 archived: `add-shell`.
@@ -21,25 +20,24 @@ Completed:
 - G4 archived: `add-map`.
 - G4 archived: `add-weekend-compare`.
 - G4 archived: `add-top-clock`.
+- G4 archived: `add-animated-bg`.
 
 ## Current Slice
 
-Active slice: `add-animated-bg`
+Active slice: `add-bottom-jokes`
 
-Last completed slice: `add-top-clock`
+Last completed slice: `add-animated-bg`
 
 Status:
 
-- Condition-driven animated sky behind content (`AnimatedBackground`,
-  `lib/animated-bg/`).
-- Reuses forecast cache for weather code and location sunrise/sunset.
-- Validation green on 2026-06-27; manual smoke and archive pending.
-- Prior slice archived at `openspec/changes/archive/2026-06-27-add-top-clock`
-  (commit `3b4af42` / archive `b26ce41`).
+- Condition-driven animated sky archived at
+  `openspec/changes/archive/2026-06-27-add-animated-bg`.
+- Manual browser smoke passed on 2026-06-27.
+- Commit `ac17595` carries `Slice: add-animated-bg`; archive pending commit.
 
 ## Validation Snapshot
 
-Last green (`add-animated-bg` implementation, 2026-06-27):
+Last green (`add-animated-bg` archive, 2026-06-27):
 
 - `npm run test:run` (47 tests)
 - `npm run lint`
@@ -54,10 +52,11 @@ Expected warnings:
 
 ## Known Deferrals
 
-- Footer jokes remain as the final polish slice.
+- None on the MVP slice list after `add-bottom-jokes`.
 
 ## Next Actions
 
-1. Manual smoke `add-animated-bg`: gradient follows location/weather; reduced motion is static.
-2. Review-gate and archive `add-animated-bg`.
-3. Finish `add-bottom-jokes`.
+1. OpenSpec propose + implement `add-bottom-jokes` (deterministic Ukrainian jokes +
+   Open-Meteo/OSM credits in footer).
+2. Review-gate, smoke, archive `add-bottom-jokes`.
+3. MVP slice delivery complete — run final cross-cutting validation and QA proof.
