@@ -163,37 +163,60 @@
     },
     {
       "id": "FR-FORECAST-01",
-      "specs": [],
+      "specs": [
+        "openspec/specs/forecast/spec.md"
+      ],
       "planned": true,
-      "tests": [],
+      "tests": [
+        "lib/forecast/forecast.test.ts"
+      ],
       "recordings": []
     },
     {
       "id": "FR-FORECAST-02",
-      "specs": [],
+      "specs": [
+        "openspec/specs/forecast/spec.md"
+      ],
       "planned": true,
-      "tests": [],
+      "tests": [
+        "lib/forecast/forecast.test.ts",
+        "components/forecast/forecast-panel.test.tsx"
+      ],
       "recordings": []
     },
     {
       "id": "FR-FORECAST-03",
-      "specs": [],
+      "specs": [
+        "openspec/specs/forecast/spec.md"
+      ],
       "planned": true,
-      "tests": [],
+      "tests": [
+        "lib/forecast/forecast.test.ts",
+        "components/forecast/forecast-panel.test.tsx"
+      ],
       "recordings": []
     },
     {
       "id": "FR-FORECAST-04",
-      "specs": [],
+      "specs": [
+        "openspec/specs/forecast/spec.md"
+      ],
       "planned": true,
-      "tests": [],
+      "tests": [
+        "lib/forecast/forecast.test.ts",
+        "components/forecast/forecast-panel.test.tsx"
+      ],
       "recordings": []
     },
     {
       "id": "FR-FORECAST-05",
-      "specs": [],
+      "specs": [
+        "openspec/specs/forecast/spec.md"
+      ],
       "planned": true,
-      "tests": [],
+      "tests": [
+        "lib/forecast/forecast.test.ts"
+      ],
       "recordings": []
     },
     {
@@ -273,24 +296,30 @@
     {
       "id": "FR-COMFORT-04",
       "specs": [
-        "openspec/specs/comfort-score/spec.md"
+        "openspec/specs/comfort-score/spec.md",
+        "openspec/specs/forecast/spec.md"
       ],
       "planned": true,
       "tests": [
+        "lib/forecast/forecast.test.ts",
         "lib/scoring/comfort.test.ts",
-        "lib/scoring/comfort.test.ts"
+        "lib/scoring/comfort.test.ts",
+        "components/forecast/forecast-panel.test.tsx"
       ],
       "recordings": []
     },
     {
       "id": "FR-COMFORT-05",
       "specs": [
-        "openspec/specs/comfort-score/spec.md"
+        "openspec/specs/comfort-score/spec.md",
+        "openspec/specs/forecast/spec.md"
       ],
       "planned": true,
       "tests": [
+        "lib/forecast/forecast.test.ts",
         "lib/scoring/comfort.test.ts",
-        "lib/scoring/comfort.test.ts"
+        "lib/scoring/comfort.test.ts",
+        "components/forecast/forecast-panel.test.tsx"
       ],
       "recordings": []
     },
@@ -358,26 +387,6 @@
     },
     {
       "check": "spec-mention",
-      "msg": "FR-FORECAST-01 is not cited by any spec under openspec/specs/ (partial G2 — expected until all capability specs land)"
-    },
-    {
-      "check": "spec-mention",
-      "msg": "FR-FORECAST-02 is not cited by any spec under openspec/specs/ (partial G2 — expected until all capability specs land)"
-    },
-    {
-      "check": "spec-mention",
-      "msg": "FR-FORECAST-03 is not cited by any spec under openspec/specs/ (partial G2 — expected until all capability specs land)"
-    },
-    {
-      "check": "spec-mention",
-      "msg": "FR-FORECAST-04 is not cited by any spec under openspec/specs/ (partial G2 — expected until all capability specs land)"
-    },
-    {
-      "check": "spec-mention",
-      "msg": "FR-FORECAST-05 is not cited by any spec under openspec/specs/ (partial G2 — expected until all capability specs land)"
-    },
-    {
-      "check": "spec-mention",
       "msg": "FR-MAP-01 is not cited by any spec under openspec/specs/ (partial G2 — expected until all capability specs land)"
     },
     {
@@ -427,26 +436,6 @@
     {
       "check": "test-trace",
       "msg": "FR-JOKES-01 has no test annotated \"@trace FR-JOKES-01\""
-    },
-    {
-      "check": "test-trace",
-      "msg": "FR-FORECAST-01 has no test annotated \"@trace FR-FORECAST-01\""
-    },
-    {
-      "check": "test-trace",
-      "msg": "FR-FORECAST-02 has no test annotated \"@trace FR-FORECAST-02\""
-    },
-    {
-      "check": "test-trace",
-      "msg": "FR-FORECAST-03 has no test annotated \"@trace FR-FORECAST-03\""
-    },
-    {
-      "check": "test-trace",
-      "msg": "FR-FORECAST-04 has no test annotated \"@trace FR-FORECAST-04\""
-    },
-    {
-      "check": "test-trace",
-      "msg": "FR-FORECAST-05 has no test annotated \"@trace FR-FORECAST-05\""
     },
     {
       "check": "test-trace",

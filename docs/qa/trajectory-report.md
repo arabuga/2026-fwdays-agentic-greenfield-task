@@ -5,18 +5,19 @@ archived slice took: review evidence, `Slice:` trailers, and module scope.
 It does NOT verify test-first ordering or test integrity (not derivable from
 one-commit-per-slice history) — those are graded by the trajectory-eval workflow.
 
-Scope: 3 archived slice(s).
-Result: PASS, 1 warning(s)
+Scope: 4 archived slice(s).
+Result: PASS, 2 warning(s)
 
 | Slice | Review evidence | Trailer commits | design+tasks | lib domains touched |
 |---|---|---|---|---|
 | 2026-06-26-add-comfort-score | clean | 2 | yes | scoring |
-| 2026-06-27-add-city-search | clean | **0** | yes | - |
+| 2026-06-27-add-city-search | clean | 1 | yes | city-search, i18n |
+| 2026-06-27-add-forecast | clean | **0** | yes | - |
 | 2026-06-27-add-shell | clean | 1 | yes | i18n, shell |
 
 ## Cross-slice module overlap
 
-None.
+- `lib/i18n/` touched by: 2026-06-27-add-city-search, 2026-06-27-add-shell
 
 ## Failures
 
@@ -24,4 +25,5 @@ None.
 
 ## Warnings
 
-- **trailer**: 2026-06-27-add-city-search: no commit carries a "Slice: add-city-search" trailer
+- **trailer**: 2026-06-27-add-forecast: no commit carries a "Slice: add-forecast" trailer
+- **in-scope**: lib/i18n/ modified by 2 slices (2026-06-27-add-city-search, 2026-06-27-add-shell) — review for scope drift

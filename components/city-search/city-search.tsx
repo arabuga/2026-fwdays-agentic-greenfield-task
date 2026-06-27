@@ -12,13 +12,17 @@ import { uk } from "@/lib/i18n/uk";
 
 const DEBOUNCE_MS = 350;
 
-export function CitySearch() {
+type CitySearchProps = {
+  selectedLocation: CityLocation | null;
+  onSelectLocation: (location: CityLocation) => void;
+};
+
+export function CitySearch({ selectedLocation, onSelectLocation }: CitySearchProps) {
   const inputId = useId();
   const hintId = useId();
   const listboxId = useId();
   const [query, setQuery] = useState("");
   const [suggestions, setSuggestions] = useState<CityLocation[]>([]);
-  const [selectedLocation, setSelectedLocation] = useState<CityLocation | null>(null);
   const [status, setStatus] = useState<"idle" | "loading" | "empty" | "error">("idle");
 
   useEffect(() => {
@@ -58,7 +62,6 @@ export function CitySearch() {
   function handleQueryChange(event: ChangeEvent<HTMLInputElement>) {
     const value = event.target.value;
     setQuery(value);
-    setSelectedLocation(null);
 
     if (value.trim().length < 2) {
       setSuggestions([]);
@@ -80,7 +83,7 @@ export function CitySearch() {
           : uk.citySearch.hint;
 
   function selectLocation(location: CityLocation) {
-    setSelectedLocation(location);
+    onSelectLocation(location);
     setQuery(location.name);
     setSuggestions([]);
     setStatus("idle");
