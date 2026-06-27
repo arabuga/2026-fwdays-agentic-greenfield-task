@@ -3,6 +3,7 @@
 import { useState } from "react";
 import { CitySearch } from "@/components/city-search/city-search";
 import { ForecastPanel } from "@/components/forecast/forecast-panel";
+import { MapPanel } from "@/components/map/map-panel";
 import type { CityLocation } from "@/lib/city-search/geocoding";
 import { shellContent } from "@/lib/shell/shell-content";
 
@@ -50,15 +51,7 @@ export function WeatherExplorer() {
 
       <ForecastPanel key={selectedLocation?.id ?? "empty"} location={selectedLocation} />
 
-      <section className="min-h-44 rounded-[1.5rem] border border-white/70 bg-white/70 p-6 shadow-[0_18px_60px_rgba(26,35,50,0.08)] backdrop-blur dark:border-white/10 dark:bg-[#1a2332]/80 md:col-span-1 xl:col-span-1">
-        <div className="mb-5 h-2 w-20 rounded-full bg-[#3b6fd9]/25 dark:bg-[#6b9fff]/25" />
-        <h2 className="text-xl font-semibold text-[#1a2332] dark:text-[#e8edf4]">
-          {shellContent.mapPanelTitle}
-        </h2>
-        <p className="mt-3 leading-7 text-[#5c6b7a] dark:text-[#8b9bb0]">
-          {shellContent.mapPanelText}
-        </p>
-      </section>
+      <MapPanel location={selectedLocation} onSelectLocation={setSelectedLocation} />
     </main>
   );
 }

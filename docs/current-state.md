@@ -11,7 +11,7 @@ Completed:
 - G0: scaffold, factory loop, hooks, CI, trace scripts.
 - G1: requirements, product brief, visual design.
 - G2 partial: baseline OpenSpec exists for `comfort-score`, `shell`,
-  `city-search`, and `forecast`.
+  `city-search`, `forecast`, and `map`.
 - G3: MVP capability plan exists.
 - G4 archived: `add-comfort-score`.
 - G4 archived: `add-shell`.
@@ -26,48 +26,43 @@ Last completed slice: `add-forecast`
 
 Status:
 
-- Forecast pure helpers, memory cache, Recharts chart, forecast panel, and
-  `WeatherExplorer` client wrapper are implemented under `lib/forecast/` and
-  `components/forecast/`.
-- Review-gate completed for `add-forecast`; findings fixed and recorded in
-  `openspec/changes/archive/2026-06-27-add-forecast/review-findings.json`.
-- Manual browser smoke passed on 2026-06-27.
-- Change archived at `openspec/changes/archive/2026-06-27-add-forecast`.
-- Baseline spec synced at `openspec/specs/forecast/spec.md`.
+- Map pure helpers, reverse geocode client, Leaflet panel, and WeatherExplorer
+  wiring are implemented under `lib/map/` and `components/map/`.
+- Baseline spec authored at `openspec/specs/map/spec.md`.
+- OpenSpec change `add-map` is active with tests, lint, and build green.
+- Review-gate, manual smoke, and archive remain pending for `add-map`.
 
 ## Validation Snapshot
 
-Last green (`add-forecast` archive, 2026-06-27):
+Last green (`add-map` implementation, 2026-06-27):
 
-- `npm run test:run`
+- `npm run test:run` (30 tests)
 - `npm run lint`
 - `npm run build`
-- `npx @fission-ai/openspec@latest validate --all --strict`
-- `node scripts/check-traceability.mjs --pre-commit --check-fresh`
-- `node scripts/check-trajectory.mjs`
+- `npx @fission-ai/openspec@latest validate add-map --strict` (pending re-run after delta fix)
+- `node scripts/check-traceability.mjs --pre-commit`
+
+Archived `add-forecast` green:
+
+- Full validation + manual smoke on 2026-06-27
+- Commit `021256a` with `Slice: add-forecast`
 
 Expected warnings:
 
-- Partial G2: specs/tests/recordings missing for capabilities not started yet
-  (`map`, `top-clock`, `animated-bg`, `bottom-jokes`, `weekend-compare`).
-- Full MVP evidence is incomplete until UI slices add recordings and browser proof.
+- Partial G2: specs/tests/recordings missing for `top-clock`, `animated-bg`,
+  `bottom-jokes`, `weekend-compare`.
+- Full MVP evidence incomplete until recordings land.
 
 ## Known Deferrals
 
-- `add-map` not started; Leaflet map, click-to-set, reverse geocode pending.
+- `add-map` not archived yet; review-gate and smoke pending.
 - Live clock, footer jokes, animated background, and weekend compare remain
-  deferred to later UI slices.
-
-## Control Debt
-
-Agent behavior is currently governed by `AGENTS.md`, quality gates, and slice
-tasks. Candidate future enforcement: `scripts/check-current-state.mjs` or extend
-`check-trajectory.mjs` to fail when handoff docs are stale after archive.
+  deferred.
 
 ## Next Actions
 
-1. OpenSpec propose + implement `add-map` (Leaflet OSM, marker, click-to-set,
-   reverse geocode, SSR skeleton, attribution).
-2. Review-gate, smoke, archive `add-map`.
-3. Continue parallel/polish slices: `add-top-clock`, `add-animated-bg`,
-   `add-bottom-jokes`, then `add-weekend-compare`.
+1. Manual smoke for `add-map` (select city → map centers → click updates location
+   and forecast).
+2. Review-gate, then archive `add-map`.
+3. Continue polish slices: `add-top-clock`, `add-animated-bg`, `add-bottom-jokes`,
+   then `add-weekend-compare`.

@@ -43,4 +43,11 @@ export const en = {
     wind: "Wind",
     comfort: "Comfort",
   },
+  map: {
+    panelTitle: "Map",
+    hint: "Click the map to choose a nearby place.",
+    placeholder: "Choose a city and the map will show it on OpenStreetMap.",
+    loading: "Resolving the clicked place...",
+    error: "Could not resolve that place. The previous city stays active.",
+  },
 } as const;

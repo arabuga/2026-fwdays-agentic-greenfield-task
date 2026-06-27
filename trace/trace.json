@@ -221,37 +221,62 @@
     },
     {
       "id": "FR-MAP-01",
-      "specs": [],
+      "specs": [
+        "openspec/specs/map/spec.md",
+        "openspec/changes/add-map/specs/map/spec.md"
+      ],
       "planned": true,
-      "tests": [],
+      "tests": [
+        "lib/map/map.test.ts"
+      ],
       "recordings": []
     },
     {
       "id": "FR-MAP-02",
-      "specs": [],
+      "specs": [
+        "openspec/specs/map/spec.md",
+        "openspec/changes/add-map/specs/map/spec.md"
+      ],
       "planned": true,
-      "tests": [],
+      "tests": [
+        "lib/map/map.test.ts"
+      ],
       "recordings": []
     },
     {
       "id": "FR-MAP-03",
-      "specs": [],
+      "specs": [
+        "openspec/specs/map/spec.md",
+        "openspec/changes/add-map/specs/map/spec.md"
+      ],
       "planned": true,
-      "tests": [],
+      "tests": [
+        "lib/map/map.test.ts"
+      ],
       "recordings": []
     },
     {
       "id": "FR-MAP-04",
-      "specs": [],
+      "specs": [
+        "openspec/specs/map/spec.md",
+        "openspec/changes/add-map/specs/map/spec.md"
+      ],
       "planned": true,
-      "tests": [],
+      "tests": [
+        "lib/map/map.test.ts"
+      ],
       "recordings": []
     },
     {
       "id": "FR-MAP-05",
-      "specs": [],
+      "specs": [
+        "openspec/specs/map/spec.md",
+        "openspec/changes/add-map/specs/map/spec.md"
+      ],
       "planned": true,
-      "tests": [],
+      "tests": [
+        "lib/map/map.test.ts"
+      ],
       "recordings": []
     },
     {
@@ -387,26 +412,6 @@
     },
     {
       "check": "spec-mention",
-      "msg": "FR-MAP-01 is not cited by any spec under openspec/specs/ (partial G2 — expected until all capability specs land)"
-    },
-    {
-      "check": "spec-mention",
-      "msg": "FR-MAP-02 is not cited by any spec under openspec/specs/ (partial G2 — expected until all capability specs land)"
-    },
-    {
-      "check": "spec-mention",
-      "msg": "FR-MAP-03 is not cited by any spec under openspec/specs/ (partial G2 — expected until all capability specs land)"
-    },
-    {
-      "check": "spec-mention",
-      "msg": "FR-MAP-04 is not cited by any spec under openspec/specs/ (partial G2 — expected until all capability specs land)"
-    },
-    {
-      "check": "spec-mention",
-      "msg": "FR-MAP-05 is not cited by any spec under openspec/specs/ (partial G2 — expected until all capability specs land)"
-    },
-    {
-      "check": "spec-mention",
       "msg": "FR-ANIM-01 is not cited by any spec under openspec/specs/ (partial G2 — expected until all capability specs land)"
     },
     {
@@ -436,26 +441,6 @@
     {
       "check": "test-trace",
       "msg": "FR-JOKES-01 has no test annotated \"@trace FR-JOKES-01\""
-    },
-    {
-      "check": "test-trace",
-      "msg": "FR-MAP-01 has no test annotated \"@trace FR-MAP-01\""
-    },
-    {
-      "check": "test-trace",
-      "msg": "FR-MAP-02 has no test annotated \"@trace FR-MAP-02\""
-    },
-    {
-      "check": "test-trace",
-      "msg": "FR-MAP-03 has no test annotated \"@trace FR-MAP-03\""
-    },
-    {
-      "check": "test-trace",
-      "msg": "FR-MAP-04 has no test annotated \"@trace FR-MAP-04\""
-    },
-    {
-      "check": "test-trace",
-      "msg": "FR-MAP-05 has no test annotated \"@trace FR-MAP-05\""
     },
     {
       "check": "test-trace",
@@ -612,6 +597,10 @@
     {
       "check": "recording-evidence",
       "msg": "FR-COMPARE-03 is not referenced by any recording manifest under docs/qa/"
+    },
+    {
+      "check": "active-changes",
+      "msg": "active change \"add-map\" is not archived"
     }
   ]
 }
