@@ -9,9 +9,21 @@
         "scoring"
       ],
       "processComplete": true
+    },
+    {
+      "slice": "2026-06-27-add-shell",
+      "reviewEvidence": "clean",
+      "trailerCommits": 0,
+      "libDomains": [],
+      "processComplete": true
     }
   ],
   "overlaps": [],
   "failures": [],
-  "warnings": []
+  "warnings": [
+    {
+      "check": "trailer",
+      "msg": "2026-06-27-add-shell: no commit carries a \"Slice: add-shell\" trailer"
+    }
+  ]
 }

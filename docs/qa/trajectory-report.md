@@ -5,12 +5,13 @@ archived slice took: review evidence, `Slice:` trailers, and module scope.
 It does NOT verify test-first ordering or test integrity (not derivable from
 one-commit-per-slice history) — those are graded by the trajectory-eval workflow.
 
-Scope: 1 archived slice(s).
-Result: PASS
+Scope: 2 archived slice(s).
+Result: PASS, 1 warning(s)
 
 | Slice | Review evidence | Trailer commits | design+tasks | lib domains touched |
 |---|---|---|---|---|
 | 2026-06-26-add-comfort-score | clean | 2 | yes | scoring |
+| 2026-06-27-add-shell | clean | **0** | yes | - |
 
 ## Cross-slice module overlap
 
@@ -22,4 +23,4 @@ None.
 
 ## Warnings
 
-None.
+- **trailer**: 2026-06-27-add-shell: no commit carries a "Slice: add-shell" trailer

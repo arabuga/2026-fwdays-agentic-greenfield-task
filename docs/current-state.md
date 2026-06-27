@@ -10,13 +10,14 @@ Completed:
 
 - G0: scaffold, factory loop, hooks, CI, trace scripts.
 - G1: requirements, product brief, visual design.
-- G2 partial: baseline OpenSpec exists for `comfort-score`.
+- G2 partial: baseline OpenSpec exists for `comfort-score` and `shell`.
 - G3: MVP capability plan exists.
 - G4 archived: `add-comfort-score`.
+- G4 archived: `add-shell`.
 
 ## Current Slice
 
-Last completed slice: `add-comfort-score`
+Last completed slice: `add-shell`
 
 Status:
 
@@ -25,6 +26,12 @@ Status:
 - Review-gate completed; confirmed findings were fixed and recorded in
   `openspec/changes/archive/2026-06-26-add-comfort-score/review-findings.json`.
 - Change archived at `openspec/changes/archive/2026-06-26-add-comfort-score`.
+- Shell implementation complete in `app/page.tsx`, `app/layout.tsx`, and
+  `app/globals.css`.
+- Shell content is framework-free and tested in `lib/shell/shell-content.test.ts`.
+- Review-gate completed for `add-shell`; confirmed findings were fixed and
+  recorded in `openspec/changes/archive/2026-06-27-add-shell/review-findings.json`.
+- Change archived at `openspec/changes/archive/2026-06-27-add-shell`.
 
 ## Validation Snapshot
 
@@ -35,18 +42,32 @@ Last green:
 - `npm run build`
 - `npx @fission-ai/openspec@latest validate --all --strict`
 - `node scripts/check-traceability.mjs --pre-commit --check-fresh`
+- `node scripts/check-trajectory.mjs`
+
+Archived `add-shell` green:
+
+- `npm run test:run`
+- `npm run lint`
+- `npm run build`
+- `npx @fission-ai/openspec@latest validate add-shell --strict`
+- `npx @fission-ai/openspec@latest validate --all --strict`
+- `node scripts/check-traceability.mjs --pre-commit --check-fresh`
+- `node scripts/check-trajectory.mjs`
 
 Expected warnings:
 
 - Partial G2: specs/tests/recordings are missing for capabilities not started yet.
 - Full MVP evidence is incomplete until UI slices add recordings and browser proof.
+- `check-trajectory` warns for `add-shell` until a commit carries
+  `Slice: add-shell`.
 
 ## Known Deferrals
 
-- The visible app is still the default Next.js page.
 - Comfort badge rendering and weekend highlight strip are deferred to the
   `add-forecast` UI integration slice.
-- Full G2 is not complete; only `comfort-score` has a baseline spec.
+- Full G2 is not complete; only `comfort-score` and `shell` have baseline specs.
+- Real city search, forecast data, map rendering, live clock, footer jokes, and
+  animated background remain deferred to later UI slices.
 
 ## Control Debt
 
@@ -64,6 +85,5 @@ Candidate future enforcement:
 
 ## Next Actions
 
-1. Commit and push review-gate/archive/current-state changes.
-2. Start UI critical path: `add-shell`, then `add-city-search`, then `add-forecast`.
-3. Add deterministic current-state freshness enforcement after archive flow stabilizes.
+1. Continue UI critical path with `add-city-search`.
+2. Add deterministic current-state freshness enforcement after archive flow stabilizes.

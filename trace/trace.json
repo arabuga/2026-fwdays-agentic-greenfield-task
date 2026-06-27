@@ -61,23 +61,35 @@
   "links": [
     {
       "id": "FR-SHELL-01",
-      "specs": [],
+      "specs": [
+        "openspec/specs/shell/spec.md"
+      ],
       "planned": true,
-      "tests": [],
+      "tests": [
+        "lib/shell/shell-content.test.ts"
+      ],
       "recordings": []
     },
     {
       "id": "FR-SHELL-02",
-      "specs": [],
+      "specs": [
+        "openspec/specs/shell/spec.md"
+      ],
       "planned": true,
-      "tests": [],
+      "tests": [
+        "lib/shell/shell-content.test.ts"
+      ],
       "recordings": []
     },
     {
       "id": "FR-SHELL-03",
-      "specs": [],
+      "specs": [
+        "openspec/specs/shell/spec.md"
+      ],
       "planned": true,
-      "tests": [],
+      "tests": [
+        "lib/shell/shell-content.test.ts"
+      ],
       "recordings": []
     },
     {
@@ -318,18 +330,6 @@
   "warnings": [
     {
       "check": "spec-mention",
-      "msg": "FR-SHELL-01 is not cited by any spec under openspec/specs/ (partial G2 — expected until all capability specs land)"
-    },
-    {
-      "check": "spec-mention",
-      "msg": "FR-SHELL-02 is not cited by any spec under openspec/specs/ (partial G2 — expected until all capability specs land)"
-    },
-    {
-      "check": "spec-mention",
-      "msg": "FR-SHELL-03 is not cited by any spec under openspec/specs/ (partial G2 — expected until all capability specs land)"
-    },
-    {
-      "check": "spec-mention",
       "msg": "FR-CLOCK-01 is not cited by any spec under openspec/specs/ (partial G2 — expected until all capability specs land)"
     },
     {
@@ -419,18 +419,6 @@
     {
       "check": "spec-mention",
       "msg": "FR-COMPARE-03 is not cited by any spec under openspec/specs/ (partial G2 — expected until all capability specs land)"
-    },
-    {
-      "check": "test-trace",
-      "msg": "FR-SHELL-01 has no test annotated \"@trace FR-SHELL-01\""
-    },
-    {
-      "check": "test-trace",
-      "msg": "FR-SHELL-02 has no test annotated \"@trace FR-SHELL-02\""
-    },
-    {
-      "check": "test-trace",
-      "msg": "FR-SHELL-03 has no test annotated \"@trace FR-SHELL-03\""
     },
     {
       "check": "test-trace",

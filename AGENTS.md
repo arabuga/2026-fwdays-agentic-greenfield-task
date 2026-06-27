@@ -30,6 +30,11 @@ Before substantive work, read when present:
 
 Update `docs/current-state.md` after each archived slice or gate passage.
 
+At the end of every substantive response, propose the next recommended step so
+the user does not need to ask "what next?". Keep it short, grounded in
+`docs/current-state.md` and `docs/mvp-capability-plan.md`, and name the next
+slice/gate when one is obvious.
+
 ## Stack & module conventions
 
 - **App:** Next.js 16 App Router, TypeScript strict, Tailwind 4, shadcn/ui base-nova
