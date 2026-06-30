@@ -12,7 +12,7 @@
 | Data APIs | Open-Meteo forecast + geocoding (keyless) |
 | Tests | Vitest (unit), Playwright (E2E + demo recordings) |
 | Specs | OpenSpec (`openspec/specs/`, `openspec/changes/`) |
-| CI | GitHub Actions (`.github/workflows/ci.yml`) |
+| CI | GitHub Actions — full history checkout on PR/push |
 
 ## Repository commands
 
@@ -27,7 +27,11 @@ npm run check:trace
 npm run check:recordings
 npm run qa:verify    # full QA gate bundle (when evidence exists)
 npm run qa:record-demos  # regenerate Playwright demo clips
+npm run qa:record-homework   # homework video (~90 s)
+npm run qa:mux-homework-voice  # voice + mux only (keeps existing .webm)
 ```
+
+CI note: `.github/workflows/ci.yml` uses `fetch-depth: 0` — required for `check-trajectory.mjs` (`git log --all` for `Slice:` trailers).
 
 ## Environments
 

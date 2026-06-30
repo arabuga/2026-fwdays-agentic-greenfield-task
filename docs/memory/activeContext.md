@@ -2,10 +2,10 @@
 
 ## Current focus
 
-- **Now:** record video demo; add URL to [PR #1](https://github.com/arabuga/2026-fwdays-agentic-greenfield-task/pull/1); enable CodeRabbit.
-- **MVP delivery:** complete (9/9 slices archived). See `docs/current-state.md`.
-- **Policy:** update Memory Bank + `current-state.md` when shared truth changes;
-  prefer small edits; test-first for any new capability work.
+- **Now:** **idle** — homework submitted; no active slice or gate.
+- **Author:** Vitalii Yurkov · fork [arabuga/2026-fwdays-agentic-greenfield-task](https://github.com/arabuga/2026-fwdays-agentic-greenfield-task).
+- **Submission PR:** [#1](https://github.com/arabuga/2026-fwdays-agentic-greenfield-task/pull/1) (`homework/submission` → `main`, CI green).
+- **Policy:** update Memory Bank + `docs/current-state.md` when shared truth changes.
 
 ## Where to put updates
 
@@ -20,6 +20,4 @@
 
 ## Open questions
 
-- Author real name and video URL for PR — **Vitalii Yurkov**; video pending.
-- Git `safe.directory` may be needed on this machine before git push works.
-- Optional G6 hardening: full `npm run qa:verify` with trajectory/eval evidence.
+- None blocking. Optional: merge PR #1; address any open CodeRabbit threads.

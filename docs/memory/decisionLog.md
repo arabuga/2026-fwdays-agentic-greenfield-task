@@ -48,4 +48,10 @@ belongs in `docs/adr/` when present. Link from here to the ADR.
 
 ---
 
+## 2026-06-30 — Homework submitted (fwdays Greenfield)
+
+- **Context:** course requires PR with name, video, agentic-practice description on fork.
+- **Decision:** branch `homework/submission` → PR #1; video in `docs/homework-demo/`; Memory Bank for cross-session handoff.
+- **Consequence:** CI green after `fetch-depth: 0` + `@vitest/coverage-v8`; submission link sent; repo idle until new scope.
+
 <!-- Append new entries below -->
