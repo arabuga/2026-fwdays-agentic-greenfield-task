@@ -19,7 +19,7 @@ Live demo: https://2026-fwdays-agentic-greenfield-task.vercel.app
 
 ## Відео-демо (1–2 хв)
 
-Video: _TODO — встав посилання після запису_
+Video: https://github.com/arabuga/2026-fwdays-agentic-greenfield-task/blob/homework/submission/docs/homework-demo/homework-demo-final.mp4
 
 ## Які практики Agentic Engineering застосовано
 
@@ -75,6 +75,6 @@ https://github.com/arabuga/2026-fwdays-agentic-greenfield-task
 ### Чекліст
 
 - [x] Вказано справжнє імʼя
-- [ ] Додано посилання на відео-демо (1–2 хв)
+- [x] Додано посилання на відео-демо (1–2 хв)
 - [x] Описано застосовані практики Agentic Engineering
 - [x] Результат робочий і доведений до кінця

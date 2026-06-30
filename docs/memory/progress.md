@@ -20,11 +20,11 @@
 
 ## Pending (homework submission)
 
-- [ ] Fill author name in `docs/homework-submission.md` and PR template.
-- [ ] Record 1–2 min video demo (script in `docs/homework-submission.md`).
-- [ ] Push branch to fork; open PR against `main` with filled template.
-- [ ] Enable CodeRabbit on fork; iterate on review feedback.
-- [ ] Submit PR link in course channel.
+- [x] Fill author name — Vitalii Yurkov
+- [x] Record 1–2 min video demo — `docs/homework-demo/homework-demo-final.mp4` (~2 MB, Ukrainian voiceover)
+- [x] Push branch; open PR — https://github.com/arabuga/2026-fwdays-agentic-greenfield-task/pull/1
+- [ ] Enable CodeRabbit on fork; iterate on review feedback
+- [x] Submit PR link in course channel — https://github.com/arabuga/2026-fwdays-agentic-greenfield-task/pull/1
 
 ## Pending (optional hardening)
 

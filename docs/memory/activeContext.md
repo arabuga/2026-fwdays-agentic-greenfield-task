@@ -2,8 +2,7 @@
 
 ## Current focus
 
-- **Now:** complete **fwdays homework submission** — Memory Bank layer added;
-  prepare PR, record 1–2 min video demo, enable CodeRabbit on fork.
+- **Now:** record video demo; add URL to [PR #1](https://github.com/arabuga/2026-fwdays-agentic-greenfield-task/pull/1); enable CodeRabbit.
 - **MVP delivery:** complete (9/9 slices archived). See `docs/current-state.md`.
 - **Policy:** update Memory Bank + `current-state.md` when shared truth changes;
   prefer small edits; test-first for any new capability work.

@@ -21,6 +21,20 @@
    npm run check:trace
    ```
 
+## Regenerate video
+
+```bash
+npm run dev                    # terminal 1
+npm run qa:record-homework     # screen capture + voice + final mp4
+# or, if .webm already exists:
+npm run qa:mux-homework-voice  # voice + mux only
+```
+
+Requires: Playwright Chromium (`npx playwright install chromium`), ffmpeg, Python + `pip install edge-tts`.
+Optional: `PYTHON=/path/to/python.exe` if auto-detect fails.
+
+Output: `docs/homework-demo/homework-demo-final.mp4`
+
 3. **Branch and push:**
 
    ```bash
@@ -42,7 +56,7 @@
 | Field | Your value |
 |-------|------------|
 | **Author name** | Vitalii Yurkov |
-| **Video URL** | _TODO — після запису_ |
+| **Video URL** | https://github.com/arabuga/2026-fwdays-agentic-greenfield-task/blob/homework/submission/docs/homework-demo/homework-demo-final.mp4 |
 | **Fork URL** | https://github.com/arabuga/2026-fwdays-agentic-greenfield-task |
 
 ---
