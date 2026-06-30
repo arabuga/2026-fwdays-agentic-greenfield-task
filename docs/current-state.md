@@ -1,6 +1,6 @@
 # Current State — Weather Explorer
 
-Last updated: 2026-06-27
+Last updated: 2026-06-30
 
 ## Phase
 
@@ -46,8 +46,22 @@ Last green (2026-06-27):
 - Live deployment Lighthouse / TTFB (NFR-PERF-01/02).
 - Future-phase scope from `docs/requirements.md` (accounts, push, native app).
 
+## Memory Bank
+
+Agent working memory adopted (pattern from `agent-ide-bootstrap`):
+
+- `docs/memory/` — projectbrief, productContext, techContext, systemPatterns,
+  activeContext, progress, decisionLog
+- Rules: `.cursor/rules/memory-bank.mdc`, `.cursor/rules/docs-maintenance.mdc`
+
+## Homework submission (fwdays Greenfield)
+
+See [homework-submission.md](./homework-submission.md) for PR text, video script,
+and checklist. Fork upstream:
+[koldovsky/2026-fwdays-agentic-greenfield-task](https://github.com/koldovsky/2026-fwdays-agentic-greenfield-task).
+
 ## Next Actions
 
-1. Run `npm run qa:verify` if trajectory/eval evidence exists.
-2. Optional: push branch and open PR for workshop delivery.
+1. **Submit homework:** record video, fill PR template, push fork, enable CodeRabbit.
+2. Run `npm run qa:verify` if trajectory/eval evidence exists.
 3. Product owner sign-off on [mvp-acceptance-report.md](./qa/mvp-acceptance-report.md).
